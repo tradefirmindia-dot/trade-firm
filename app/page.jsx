@@ -23,9 +23,13 @@ const faqs = [
 
 function LeadForm({ compact = false }) {
   const [form, setForm] = useState({
-    name: "", phone: "", experience: "Beginner",
-    interest: "Stock Market Education", consent: false
+    name: "",
+    phone: "",
+    fund: "Below ₹50,000",
+    segment: "Option Trading",
+    consent: false
   });
+
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -57,7 +61,13 @@ function LeadForm({ compact = false }) {
       const body = await res.json();
       if (!res.ok) throw new Error(body.error || "Submission failed");
       setStatus("Thank you. Trade Firm will contact you shortly.");
-      setForm({ name: "", phone: "", experience: "Beginner", interest: "Stock Market Education", consent: false });
+      setForm({
+  name: "",
+  phone: "",
+  fund: "Below ₹50,000",
+  segment: "Option Trading",
+  consent: false
+});
     } catch {
       setStatus("Could not submit right now. Please try again.");
     } finally {
@@ -83,19 +93,37 @@ function LeadForm({ compact = false }) {
       </label>
 
       <div className="form-grid">
-        <label>Experience
-          <select name="experience" value={form.experience} onChange={change}>
-            <option>Beginner</option><option>0–2 Years</option><option>2–5 Years</option><option>5+ Years</option>
-          </select>
-        </label>
-        <label>Interested in
-          <select name="interest" value={form.interest} onChange={change}>
-            <option>Stock Market Education</option><option>Index Research</option>
-            <option>Price Action</option><option>Options Education</option><option>Trading Psychology</option>
-          </select>
-        </label>
-      </div>
+        <label>
+  Fund
+  <select
+    name="fund"
+    value={form.fund}
+    onChange={change}
+  >
+    <option>Below ₹50,000</option>
+    <option>₹50,000 - ₹1,00,000</option>
+    <option>₹1,00,000 - ₹3,00,000</option>
+    <option>₹3,00,000 - ₹5,00,000</option>
+    <option>Above ₹5,00,000</option>
+  </select>
+</label>
 
+<label>
+  Segments
+  <select
+    name="segment"
+    value={form.segment}
+    onChange={change}
+  >
+    <option>Option Trading</option>
+    <option>Futures Trading</option>
+    <option>Stock Trading</option>
+    <option>Intraday Trading</option>
+    <option>Swing Trading</option>
+    <option>All Segments</option>
+  </select>
+</label>
+</div>
       <label className="consent">
         <input type="checkbox" name="consent" checked={form.consent} onChange={change} />
         <span>I agree to be contacted by Trade Firm through call or WhatsApp regarding this enquiry.</span>

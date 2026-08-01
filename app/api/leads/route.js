@@ -6,9 +6,8 @@ export async function POST(request) {
 
     const name = String(body.name || "").trim();
     const phone = String(body.phone || "").trim();
-    const experience = String(body.experience || "").trim();
-    const interest = String(body.interest || "").trim();
-
+    const fund = String(body.fund || "").trim();
+const segment = String(body.segment || "").trim();
     if (!name) {
       return NextResponse.json(
         { error: "Name is required." },
@@ -53,8 +52,8 @@ export async function POST(request) {
       "",
       `👤 Name: ${name}`,
       `📞 Phone: +91 ${phone}`,
-      `📈 Experience: ${experience || "Not provided"}`,
-      `🎯 Interest: ${interest || "Not provided"}`,
+      `💰 Fund: ${fund || "Not provided"}`,
+`📊 Segment: ${segment || "Not provided"}`,
       `🕒 Time: ${indiaTime}`
     ].join("\n");
 
