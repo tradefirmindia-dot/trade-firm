@@ -8,10 +8,26 @@ import {
 } from "lucide-react";
 
 const services = [
-  { icon: CandlestickChart, title: "Index Research", text: "NIFTY, BANK NIFTY, FINNIFTY, SENSEX and broader market context." },
-  { icon: LineChart, title: "Price Action", text: "Structure, supply-demand, liquidity and confirmation-led analysis." },
-  { icon: BarChart3, title: "Options Education", text: "Premium behaviour, volatility, timing and disciplined execution." },
-  { icon: BrainCircuit, title: "Trading Psychology", text: "Patience, consistency, process and emotional control." }
+  {
+    icon: CandlestickChart,
+    title: "Index Market Research",
+    text: "Structured research across NIFTY, BANK NIFTY, FINNIFTY, SENSEX and major Indian benchmarks."
+  },
+  {
+    icon: LineChart,
+    title: "Price Action Analysis",
+    text: "Professional analysis of trend, structure, support, resistance, liquidity and confirmation."
+  },
+  {
+    icon: BarChart3,
+    title: "Options Strategy Research",
+    text: "Research focused on premium behaviour, volatility, timing, risk and disciplined options execution."
+  },
+  {
+    icon: BrainCircuit,
+    title: "Trading Strategy & Risk",
+    text: "Decision frameworks built around capital protection, execution discipline and market psychology."
+  }
 ];
 
 const faqs = [
@@ -293,17 +309,22 @@ export default function Home() {
         </div></div>
 
         <section className="section shell v6-workspace">
-          <div className="section-head">
-            <span>MARKET WORKSPACE</span>
-            <h2>One premium interface for serious market thinking.</h2>
-            <p>This visual workspace demonstrates how research, education and lead engagement come together. It does not display live market data.</p>
-          </div>
+  <div className="section-head">
+    <span>PROFESSIONAL MARKET RESEARCH</span>
+    <h2>Institutional-style analysis for informed trading decisions.</h2>
+    <p>
+      Trade Firm provides structured market research across NIFTY, BANK NIFTY,
+      FINNIFTY, SENSEX and other key market segments. Every research view is
+      built around price action, market structure and disciplined risk management.
+    </p>
+  </div>
 
           <div className="workspace-grid">
             <article className="workspace-main">
               <div className="workspace-top">
-                <div><small>RESEARCH VIEW</small><h3>Index Structure</h3></div>
-                <span>SAMPLE LAYOUT</span>
+               <small>MARKET RESEARCH</small>
+<h3>Institutional Analysis</h3>
+<span>PROFESSIONAL VIEW</span>
               </div>
               <div className="workspace-chart">
                 <svg viewBox="0 0 760 300" preserveAspectRatio="none">
@@ -313,9 +334,23 @@ export default function Home() {
                 </svg>
               </div>
               <div className="workspace-metrics">
-                <div><Activity/><b>Context</b><span>Trend and structure</span></div>
-                <div><Target/><b>Levels</b><span>Important zones</span></div>
-                <div><ShieldCheck/><b>Risk</b><span>Invalidation first</span></div>
+                <div>
+  <Activity />
+  <b>Market Structure</b>
+  <span>Trend, momentum and institutional context</span>
+</div>
+
+<div>
+  <Target />
+  <b>Key Trading Levels</b>
+  <span>Support, resistance and high-probability zones</span>
+</div>
+
+<div>
+  <ShieldCheck />
+  <b>Risk Management</b>
+  <span>Defined invalidation and capital protection</span>
+</div>
               </div>
             </article>
 
@@ -323,8 +358,8 @@ export default function Home() {
               {[
                 [Gauge,"Risk-first process","Build decisions around protection, not excitement."],
                 [Layers3,"Multi-index coverage","Structured views across key Indian benchmarks."],
-                [Sparkles,"Premium presentation","A clean experience designed to improve trust."],
-                [MessageCircle,"Lead-ready system","Forms can connect to Telegram and Google Sheets."]
+                [Sparkles, "Institutional Reports", "Professional research reports with structured market analysis and actionable insights."],
+                [MessageCircle, "Daily Market Outlook", "Pre-market and post-market reports covering trend, key levels and trading opportunities."],
               ].map(([Icon,title,copy]) => (
                 <article className="workspace-mini" key={title}>
                   <Icon size={23}/><div><h3>{title}</h3><p>{copy}</p></div>
@@ -335,44 +370,107 @@ export default function Home() {
         </section>
 
         <section className="proof-band"><div className="shell proof-grid">
-          {[
-            ["MULTI-INDEX","Research-ready structure"],["MOBILE-FIRST","Responsive premium layout"],
-            ["RISK-FIRST","Trust-focused positioning"],["LEAD-CONNECTED","Telegram-ready setup"]
-          ].map(([v,l]) => <div key={v}><b>{v}</b><span>{l}</span></div>)}
+         {[
+  [
+    "INDEX RESEARCH",
+    "Professional analysis across NIFTY, BANK NIFTY, FINNIFTY and SENSEX"
+  ],
+  [
+    "PRICE ACTION",
+    "Market structure, liquidity and high-probability trading zones"
+  ],
+  [
+    "RISK MANAGEMENT",
+    "Defined stop-loss, capital protection and disciplined execution"
+  ],
+  [
+    "DAILY MARKET OUTLOOK",
+    "Research-driven market preparation before every trading session"
+  ]
+].map(([v, l]) => (
+  <div key={v}>
+    <b>{v}</b>
+    <span>{l}</span>
+  </div>
+))}
         </div></section>
 
         <section className="section shell" id="why">
-          <div className="section-head"><span>WHY TRADE FIRM</span><h2>Premium thinking, presented simply.</h2><p>A modern research brand should build trust through clarity, transparency and a repeatable process—not exaggerated promises.</p></div>
-          <div className="feature-grid">
-            <article className="feature feature-main">
-              <div className="feature-visual">
-                <img src="/tf-brand-mark.svg" alt="TF mark"/>
-                <div className="chart-line"><TrendingUp size={130}/></div>
-              </div>
-              <small>THE TRADE FIRM STANDARD</small><h3>Research. Education. Discipline.</h3><p>One platform for understanding markets and developing structured thinking.</p>
-            </article>
-            {[
-              ["01","Clear Market Context","Understand trend, levels and market structure before considering a trade."],
-              ["02","Risk-Aware Education","Learn why invalidation, position sizing and emotional control matter."],
-              ["03","Human Follow-Up","Lead forms connect interested users directly with the Trade Firm team."]
-            ].map(i => <article className="feature" key={i[0]}><b>{i[0]}</b><h3>{i[1]}</h3><p>{i[2]}</p></article>)}
-          </div>
-        </section>
+  <div className="section-head">
+    <span>WHY TRADE FIRM</span>
+    <h2>Research built for serious market decisions.</h2>
+    <p>
+      Trade Firm combines professional market analysis, structured price action
+      research and disciplined risk management to help traders approach the
+      market with greater clarity and confidence.
+    </p>
+  </div>
+
+  <div className="feature-grid">
+    <article className="feature feature-main">
+      <div className="feature-visual">
+        <img src="/tf-brand-mark.svg" alt="Trade Firm research mark" />
+        <div className="chart-line">
+          <TrendingUp size={130} />
+        </div>
+      </div>
+
+      <small>THE TRADE FIRM RESEARCH STANDARD</small>
+      <h3>Analysis. Strategy. Risk Management.</h3>
+      <p>
+        A professional research framework focused on market structure,
+        actionable levels and disciplined execution.
+      </p>
+    </article>
+
+    {[
+      [
+        "01",
+        "Professional Market Research",
+        "Structured analysis across major Indian indices, market segments and trading opportunities."
+      ],
+      [
+        "02",
+        "Price Action Expertise",
+        "Research based on trend, market structure, support, resistance and confirmation."
+      ],
+      [
+        "03",
+        "Risk-First Approach",
+        "Every market view is built around defined invalidation and capital protection."
+      ]
+    ].map(i => (
+      <article className="feature" key={i[0]}>
+        <b>{i[0]}</b>
+        <h3>{i[1]}</h3>
+        <p>{i[2]}</p>
+      </article>
+    ))}
+  </div>
+</section>
 
         <section className="section shell" id="services">
-          <div className="section-head"><span>WHAT WE COVER</span><h2>Built around the trader’s real journey.</h2></div>
+          <div className="section-head">
+  <span>OUR RESEARCH COVERAGE</span>
+  <h2>Comprehensive analysis across India's financial markets.</h2>
+  <p>
+    Our research framework covers major indices, derivatives, price action,
+    market structure and risk management to support disciplined trading
+    decisions.
+  </p>
+</div>
           <div className="service-grid">
             {services.map(({icon:Icon,title,text},index) => <article className="service" key={title}><Icon size={26}/><b>0{index+1}</b><h3>{title}</h3><p>{text}</p><a href="#lead">Enquire now <ArrowRight size={15}/></a></article>)}
           </div>
         </section>
 
         <section className="section shell process" id="process">
-          <div className="process-copy"><span>HOW IT WORKS</span><h2>A simple path from enquiry to clarity.</h2><p>Designed for high conversion without making the website feel aggressive or untrustworthy.</p></div>
+          <div className="process-copy"><span>OUR RESEARCH PROCESS</span><h2>Our disciplined research methodology.</h2><p>Every market report follows a structured process combining trend analysis, price action and disciplined risk management.</p></div>
           <div className="steps">
             {[
-              ["01","Submit Enquiry","Visitor shares name, phone number and learning interest."],
-              ["02","Team Follow-Up","The lead is saved and can optionally reach Telegram."],
-              ["03","Discovery Call","Understand the user’s experience and educational requirement."]
+              ["01","Market Structure Analysis","We study trend, momentum, liquidity and important institutional zones."],
+              ["02","Trade Planning","Key levels, entry logic, stop-loss and risk are defined before execution."],
+              ["03","Execution & Review","Only disciplined setups are considered, followed by performance review and improvement."],
             ].map(i => <div className="step" key={i[0]}><b>{i[0]}</b><h3>{i[1]}</h3><p>{i[2]}</p></div>)}
           </div>
         </section>
