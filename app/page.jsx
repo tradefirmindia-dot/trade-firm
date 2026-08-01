@@ -204,35 +204,88 @@ export default function Home() {
 
       <main>
         <section className="hero shell" id="home">
-          <div className="hero-copy reveal">
-            <div className="eyebrow"><i /> BUILT FOR SERIOUS MARKET LEARNERS</div>
-            <h1>Research with clarity.<br /><span>Trade with discipline.</span></h1>
-            <p className="hero-text">Trade Firm combines premium market education, structured index research and risk-first thinking in one modern platform.</p>
+  <div className="hero-copy reveal">
+    <div className="eyebrow">
+      <i /> INDIA&apos;S PREMIUM STOCK MARKET RESEARCH FIRM
+    </div>
 
-            <div className="hero-stats">
-              <div><b>10X</b><span>Clarity First</span></div>
-              <div><b>4</b><span>Core Services</span></div>
-              <div><b>100%</b><span>Risk-Aware</span></div>
-            </div>
+    <h1>
+      Professional Market Research.
+      <br />
+      <span>Smarter Trading Decisions.</span>
+    </h1>
 
-            <div className="hero-actions">
-              <a href="#lead" className="primary-btn">Get Free Consultation <ArrowRight size={18} /></a>
-              <a href="#services" className="secondary-btn">Explore Services</a>
-            </div>
+    <p className="hero-text">
+      Trade Firm delivers professional market research, price action analysis,
+      options strategy and disciplined risk management for serious participants
+      in India&apos;s financial markets.
+    </p>
 
-            <div className="trust-strip">
-              <div><CheckCircle2 /><p><b>PRICE ACTION</b><span>Structured market reading</span></p></div>
-              <div><ShieldCheck /><p><b>RISK FIRST</b><span>Capital protection mindset</span></p></div>
-              <div><BrainCircuit /><p><b>CLEAR PROCESS</b><span>No noise, no shortcuts</span></p></div>
-            </div>
-            <div className="small-disclosure">No guaranteed returns. Market participation involves risk.</div>
-          </div>
+    <div className="hero-stats">
+      <div>
+        <b>8+</b>
+        <span>Years of Market Experience</span>
+      </div>
 
-          <div className="hero-side reveal delay">
-            <div className="form-glow" />
-            <div id="lead"><LeadForm /></div>
-          </div>
-        </section>
+      <div>
+        <b>5+</b>
+        <span>Research Coverage</span>
+      </div>
+
+      <div>
+        <b>100%</b>
+        <span>Risk Management Focus</span>
+      </div>
+    </div>
+
+    <div className="hero-actions">
+      <a href="#lead" className="primary-btn">
+        Book Strategy Consultation
+      </a>
+
+      <a href="#services" className="secondary-btn">
+        Explore Research
+      </a>
+    </div>
+
+    <div className="trust-strip">
+      <div>
+        <CheckCircle2 />
+        <p>
+          <b>PRICE ACTION</b>
+          <span>Institutional market structure analysis.</span>
+        </p>
+      </div>
+
+      <div>
+        <ShieldCheck />
+        <p>
+          <b>RISK FIRST</b>
+          <span>Professional capital preservation framework.</span>
+        </p>
+      </div>
+
+      <div>
+        <BrainCircuit />
+        <p>
+          <b>CLEAR PROCESS</b>
+          <span>Research-driven execution with disciplined planning.</span>
+        </p>
+      </div>
+    </div>
+
+    <div className="small-disclosure">
+      Professional research. Transparent process. No unrealistic promises.
+    </div>
+  </div>
+
+  <div className="hero-side reveal delay">
+    <div className="form-glow" />
+    <div id="lead">
+      <LeadForm />
+    </div>
+  </div>
+</section>
 
         <div className="ticker"><div>
           NIFTY 50 <i /> BANK NIFTY <i /> FINNIFTY <i /> SENSEX <i /> MIDCAP <i /> INDIA VIX <i />
