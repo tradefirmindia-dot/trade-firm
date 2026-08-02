@@ -31,10 +31,22 @@ const services = [
 ];
 
 const faqs = [
-  ["Do you guarantee profits?", "No. Markets involve risk and no outcome can be guaranteed. Trade Firm focuses on research, education and disciplined decision making."],
-  ["What happens after I submit the form?", "Your enquiry is saved and the Trade Firm team can contact you by phone or WhatsApp, subject to your consent."],
-  ["Is this personalised investment advice?", "The website is designed for education and general market research. Personalised advice should only be provided under applicable regulatory permissions."],
-  ["Can beginners use Trade Firm content?", "Yes. The platform explains market concepts clearly, from basics to advanced price-action thinking."]
+  [
+    "What markets does Trade Firm cover?",
+    "Trade Firm provides professional market research across NIFTY, BANK NIFTY, FINNIFTY, SENSEX and selected high-volume stocks."
+  ],
+  [
+    "What research methodology do you use?",
+    "Our research is based on price action, market structure, trend analysis, support and resistance, liquidity concepts and disciplined risk management."
+  ],
+  [
+    "Do you provide daily market research?",
+    "Yes. We publish structured pre-market and post-market research, key trading levels and market outlook reports."
+  ],
+  [
+    "Who can benefit from Trade Firm research?",
+    "Our research is designed for beginners, active traders and experienced market participants who value a disciplined and structured approach."
+  ]
 ];
 
 function LeadForm({ compact = false }) {
@@ -500,15 +512,82 @@ export default function Home() {
         <MessageCircle size={21}/><span>Callback</span>
       </a>
 
-      <footer className="shell">
-        <div className="footer-top">
-          <div className="footer-brand"><img src="/tf-brand-mark.svg" alt="Trade Firm mark"/><div><strong>TRADE FIRM</strong><p>Market research and trading education with a disciplined, risk-first approach.</p></div></div>
-          <div><b>Explore</b><a href="#why">Why Trade Firm</a><a href="#services">Services</a><a href="#process">Process</a></div>
-          <div><b>Legal</b><a href="#faq">Risk Disclosure</a><a href="#faq">Privacy</a><a href="#lead">Contact</a></div>
-        </div>
-        <div className="legal"><b>Risk Disclosure:</b> This website is for education and general market research. It does not promise returns and should not be treated as personalised investment advice. Trading and investing involve risk, including possible loss of capital.</div>
-        <div className="copyright">© {new Date().getFullYear()} Trade Firm. All rights reserved.</div>
-      </footer>
+      <footer className="shell premium-footer">
+  <div className="footer-top">
+    <div className="footer-brand">
+      <img src="/tf-brand-mark.svg" alt="Trade Firm mark" />
+
+      <div>
+        <strong>TRADE FIRM</strong>
+        <p>
+          Professional market research, price action analysis and
+          risk-focused trading intelligence for serious market participants.
+        </p>
+      </div>
+    </div>
+
+    <div className="footer-column">
+      <b>Research</b>
+      <a href="#services">Index Market Research</a>
+      <a href="#services">Price Action Analysis</a>
+      <a href="#services">Options Strategy Research</a>
+      <a href="#process">Research Process</a>
+    </div>
+
+    <div className="footer-column">
+      <b>Markets Covered</b>
+      <span>NIFTY 50</span>
+      <span>BANK NIFTY</span>
+      <span>FINNIFTY</span>
+      <span>SENSEX</span>
+    </div>
+
+    <div className="footer-column">
+      <b>Company</b>
+      <a href="#why">Why Trade Firm</a>
+      <a href="#faq">FAQ</a>
+      <a href="#lead">Contact</a>
+      <a href="#lead">Book Consultation</a>
+    </div>
+  </div>
+
+  <div className="footer-divider" />
+
+  <div className="footer-column">
+  <b>Contact</b>
+
+  <a href="mailto:tradefirmindia@gmail.com">
+    📧 tradefirmindia@gmail.com
+  </a>
+
+  <a
+    href="https://t.me/TRADE_FIRM"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    ✈ @TRADE_FIRM
+  </a>
+
+  <a
+    href="https://instagram.com/tradefirmindia"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    📷 @tradefirmindia
+  </a>
+</div>
+
+  <div className="legal">
+    <b>Risk Disclosure:</b> Trade Firm provides educational content and
+    general market research. It does not guarantee returns and should not
+    be treated as personalised investment advice. Trading and investing
+    involve risk, including possible loss of capital.
+  </div>
+
+  <div className="copyright">
+    © {new Date().getFullYear()} Trade Firm. All rights reserved.
+  </div>
+</footer>
     </>
   );
 }
