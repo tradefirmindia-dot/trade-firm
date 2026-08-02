@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight, BarChart3, BrainCircuit, CandlestickChart, CheckCircle2,
   ChevronDown, LineChart, Menu, ShieldCheck, X, Activity, Gauge,
-  Layers3, MessageCircle, Sparkles, Target, TrendingUp, Zap
+  Layers3, MessageCircle, Sparkles, Target, TrendingUp, Zap, Mail, Send, Instagram
 } from "lucide-react";
 
 const services = [
@@ -557,24 +557,26 @@ export default function Home() {
   <b>Contact</b>
 
   <a href="mailto:tradefirmindia@gmail.com">
-    📧 tradefirmindia@gmail.com
-  </a>
+  <Mail size={18} style={{ marginRight: 8 }} />
+  tradefirmindia@gmail.com
+</a>
 
   <a
-    href="https://t.me/TRADE_FIRM"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    ✈ @TRADE_FIRM
-  </a>
-
+  href="https://t.me/TRADE_FIRM"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Send size={18} style={{ marginRight: 8 }} />
+  @TRADE_FIRM
+</a>
   <a
-    href="https://instagram.com/tradefirmindia"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    📷 @tradefirmindia
-  </a>
+  href="https://instagram.com/tradefirmindia"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <Instagram size={18} style={{ marginRight: 8 }} />
+  @tradefirmindia
+</a>
 </div>
 
   <div className="legal">
