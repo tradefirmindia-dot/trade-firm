@@ -27,9 +27,9 @@ Add the same Supabase project URL and server-side service-role key used by the
 Trade Firm CRM to these website environment variables:
 
 CRM_SUPABASE_URL
-CRM_SUPABASE_SERVICE_ROLE_KEY
+CRM_SUPABASE_SECRET_KEY
 
-The service-role key must remain server-side. Never rename it with a
+The secret key must remain server-side. Never rename it with a
 NEXT_PUBLIC_ prefix and never commit a real key or Telegram token to GitHub.
 
 DEPLOYMENT

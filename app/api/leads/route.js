@@ -65,20 +65,27 @@ async function syncLeadToCrm({ name, phone, fund, segment, preferredTime, indiaT
     process.env.CRM_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL,
     300
   ).replace(/\/$/, "");
-  const serviceRoleKey = clean(
-    process.env.CRM_SUPABASE_SERVICE_ROLE_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY,
+  const secretKey = clean(
+    process.env.CRM_SUPABASE_SECRET_KEY ||
+      process.env.CRM_SUPABASE_SERVICE_ROLE_KEY ||
+      process.env.SUPABASE_SERVICE_ROLE_KEY,
     1000
   );
 
-  if (!supabaseUrl || !serviceRoleKey) {
+  if (!supabaseUrl || !secretKey) {
     return { configured: false, stored: false, duplicate: false };
   }
 
   const headers = {
-    apikey: serviceRoleKey,
-    Authorization: `Bearer ${serviceRoleKey}`,
+    apikey: secretKey,
     "Content-Type": "application/json",
   };
+
+  // Legacy service_role keys are JWTs and use Authorization. New sb_secret_
+  // keys are opaque server keys and should be sent through the apikey header.
+  if (!secretKey.startsWith("sb_secret_")) {
+    headers.Authorization = `Bearer ${secretKey}`;
+  }
 
   const leadEndpoint = `${supabaseUrl}/rest/v1/leads`;
   const existingResponse = await fetch(
@@ -87,7 +94,7 @@ async function syncLeadToCrm({ name, phone, fund, segment, preferredTime, indiaT
   );
 
   if (!existingResponse.ok) {
-    throw new Error("CRM lookup failed.");
+    throw new Error(`CRM lookup failed with HTTP ${existingResponse.status}.`);
   }
 
   const existingLeads = await existingResponse.json();
@@ -109,7 +116,7 @@ async function syncLeadToCrm({ name, phone, fund, segment, preferredTime, indiaT
     );
 
     if (!updateResponse.ok) {
-      throw new Error("CRM update failed.");
+      throw new Error(`CRM update failed with HTTP ${updateResponse.status}.`);
     }
 
     return { configured: true, stored: true, duplicate: true };
@@ -131,7 +138,7 @@ async function syncLeadToCrm({ name, phone, fund, segment, preferredTime, indiaT
   });
 
   if (!insertResponse.ok) {
-    throw new Error("CRM insert failed.");
+    throw new Error(`CRM insert failed with HTTP ${insertResponse.status}.`);
   }
 
   return { configured: true, stored: true, duplicate: false };
@@ -230,13 +237,12 @@ export async function POST(request) {
       console.error("Telegram lead notification error:", error.message);
     }
 
-    if (!crm.stored && !telegram.sent) {
-      const configured = crm.configured || telegram.configured;
+    if (!crm.stored) {
       return NextResponse.json(
         {
-          error: configured
-            ? "We could not save your request right now. Please try again."
-            : "The enquiry service is not configured yet.",
+          error: crm.configured
+            ? "We could not save your request in the CRM right now. Please try again."
+            : "The CRM connection is not configured yet.",
         },
         { status: 503 }
       );
