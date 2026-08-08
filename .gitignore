@@ -1,4 +1,16 @@
+# Dependencies and generated builds
 .next/
 node_modules/
-.env.local
+
+# Local and production secrets (keep only the placeholder template)
+.env
+.env.*
+!.env.example
+
+# Local Vercel link metadata
+.vercel/
+
+# Runtime/private data, OS files and logs
+data/
 .DS_Store
+*.log

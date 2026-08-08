@@ -1,25 +1,37 @@
-TRADE FIRM PREMIUM V6
+TRADE FIRM PRECISION WEBSITE
 
-RUN ON MAC
+PRODUCTION BASELINE
+- Next.js 16
+- Official Trade Firm brand assets preserved
+- Mobile-first light institutional interface
 
-1. Extract trade-firm-premium-v6.zip
-2. Open the extracted folder in VS Code.
-3. Open Terminal > New Terminal.
-4. Run:
-   npm install
-5. Then:
-   npm run dev
-6. Open:
-   http://localhost:3000
+INCLUDED
+- Research Desk product preview
+- Complimentary discovery-call form
+- 10X THINK framework section
+- Interactive educational Risk Planner
+- Research coverage, process, FAQ and risk disclosure
+- Server-side lead validation, spam protection and duplicate handling
+- Optional direct sync into the Trade Firm CRM Supabase database
+- Optional Telegram lead notifications
 
-IMPORTANT
-- This version does NOT use Framer Motion, so the previous motion-dom error will not happen.
-- Hero floating logo has been removed.
-- Desktop and mobile layouts are rebuilt.
-- Leads save in data/leads.json.
-- Optional Telegram notifications:
-  Copy .env.example to .env.local and enter:
-  TELEGRAM_BOT_TOKEN=...
-  TELEGRAM_CHAT_ID=...
+LOCAL SETUP
+1. Copy .env.example to .env.local.
+2. Add only the services you use.
+3. Run: npm install
+4. Run: npm run dev
+5. Open: http://localhost:3000
 
-To stop the website, press Control + C on the keyboard.
+CRM CONNECTION
+Add the same Supabase project URL and server-side service-role key used by the
+Trade Firm CRM to these website environment variables:
+
+CRM_SUPABASE_URL
+CRM_SUPABASE_SERVICE_ROLE_KEY
+
+The service-role key must remain server-side. Never rename it with a
+NEXT_PUBLIC_ prefix and never commit a real key or Telegram token to GitHub.
+
+DEPLOYMENT
+Push the updated project to the production branch connected to Vercel. Confirm
+the environment variables in Vercel before testing a real lead submission.
