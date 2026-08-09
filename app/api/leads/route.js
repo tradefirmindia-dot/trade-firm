@@ -11,9 +11,12 @@ const allowedFunds = new Set([
 const allowedSegments = new Set([
   "Option Trading",
   "Futures Trading",
+  "Futures & Options",
   "Stock Trading",
+  "Index Research",
   "Intraday Trading",
   "Swing Trading",
+  "IPO Research",
   "All Segments",
 ]);
 
@@ -26,9 +29,12 @@ const allowedTimes = new Set([
 const crmSegment = {
   "Option Trading": "Options",
   "Futures Trading": "Futures",
+  "Futures & Options": "F&O",
   "Stock Trading": "Equity",
+  "Index Research": "Indices",
   "Intraday Trading": "Intraday",
   "Swing Trading": "Swing",
+  "IPO Research": "IPO",
   "All Segments": "All Segments",
 };
 

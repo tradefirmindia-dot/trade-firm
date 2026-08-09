@@ -1,0 +1,41 @@
+TRADE FIRM WEBSITE V8.0 — RESEARCH PLATFORM EDITION
+
+WHAT IS NEW
+- Premium home page repositioned as an Indian stock-market research platform.
+- Research Services page covering major NSE/BSE indices, options, futures,
+  F&O, equities, intraday, swing/positional markets and IPO research.
+- Tools section with the existing Risk Planner moved to its own page.
+- Risk Planner now uses one clear client-entered Qty field; automatic suggested Qty and the confusing formula card were removed.
+- Risk–reward selector added from 1:1 through 1:10.
+- Selected ratio now calculates reward per unit and a Target Price.
+- Risk Planner labels now use Entry Price, Stop Loss and Trade Direction.
+- Homepage market-price ticker now uses server-side NSE/BSE exchange feeds for NIFTY 50, BANK NIFTY, NIFTY MIDCAP SELECT, SENSEX, BANKEX and FINNIFTY. It refreshes automatically and no longer depends on the broken TradingView widget.
+- Reworked public messaging into professional research-advisory language with a concise standard market-risk disclosure.
+- Blogs page plus six complete evergreen research articles.
+- Proper About Us page, principles, market coverage and company story.
+- Updated navigation, footer, metadata, sitemap and mobile layouts.
+- Research Service Enquiry form wording and service options improved.
+
+IMPORTANT ITEMS PRESERVED
+- Existing premium light UI and official Trade Firm brand mark.
+- Website-to-CRM Supabase lead delivery.
+- Telegram lead notifications.
+- Indian phone validation, consent, spam protection and duplicate handling.
+- No real API keys or secrets are included in this ZIP.
+
+MAIN ROUTES
+/
+/research-services
+/tools
+/tools/risk-planner
+/blogs
+/about-us
+
+MAC TESTING
+1. Double-click RUN-WEBSITE.command.
+2. If macOS blocks it, right-click the file and choose Open.
+3. Open http://localhost:3000 in the browser.
+
+For real CRM lead testing, copy .env.example to .env.local and add the same
+server-side CRM environment values used by the live website. Never upload a
+real .env.local file or secret key to GitHub.

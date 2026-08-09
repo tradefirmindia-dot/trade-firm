@@ -1,4 +1,7 @@
 import "./globals.css";
+import MobileActionBar from "../components/MobileActionBar";
+import SiteFooter from "../components/SiteFooter";
+import SiteHeader from "../components/SiteHeader";
 
 export const metadata = {
   metadataBase: new URL("https://www.tradefirm.in"),
@@ -9,7 +12,7 @@ export const metadata = {
 },
 
   description:
-  "Trade Firm provides professional stock market research across NIFTY, BANK NIFTY, FINNIFTY and SENSEX, offering price action analysis, structured market research and disciplined risk management.",
+    "Trade Firm provides professional Indian stock-market research across major NSE and BSE indices, options, futures, F&O, equities, intraday, swing and IPO opportunities.",
 icons: {
   icon: "/tf-brand-mark.svg",
   shortcut: "/tf-brand-mark.svg",
@@ -21,7 +24,11 @@ icons: {
     "NIFTY research",
     "BANK NIFTY analysis",
     "FINNIFTY research",
-    "SENSEX analysis",
+    "SENSEX research",
+    "MIDCPNIFTY research",
+    "Indian stock options research",
+    "futures and options research India",
+    "IPO research India",
     "price action analysis",
     "options strategy research",
     "intraday market research",
@@ -35,7 +42,7 @@ icons: {
   openGraph: {
     title: "Trade Firm | Premium Stock Market Research India",
     description:
-      "Professional NIFTY, BANK NIFTY, FINNIFTY and SENSEX research with price action analysis, options strategy and disciplined risk management.",
+      "Professional research across Indian indices, options, futures, F&O, equities and IPOs with structured levels and disciplined risk management.",
     url: "https://www.tradefirm.in",
     siteName: "Trade Firm",
     locale: "en_IN",
@@ -54,7 +61,7 @@ icons: {
     card: "summary_large_image",
     title: "Trade Firm | Premium Stock Market Research India",
     description:
-      "Professional Indian stock market research, price action analysis and risk-focused trading insights.",
+      "Professional Indian stock-market research across indices, derivatives, equities and IPOs with a defined-risk process.",
       images: ["/og-image.jpg"],
   },
 
@@ -79,7 +86,7 @@ const schema = {
   logo: "https://www.tradefirm.in/icon.png",
   image: "https://www.tradefirm.in/og-image.jpg",
   description:
-    "Professional Indian stock market research, price action analysis, options trading education and risk management.",
+    "Professional Indian stock-market research across indices, options, futures, F&O, equities and IPOs with disciplined risk management.",
   email: "tradefirmindia@gmail.com",
 
   sameAs: [
@@ -105,7 +112,11 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify(schema),
           }}
         />
+        <div className="page-ambient" aria-hidden="true"><i /><i /><i /></div>
+        <SiteHeader />
         {children}
+        <MobileActionBar />
+        <SiteFooter />
       </body>
     </html>
   );

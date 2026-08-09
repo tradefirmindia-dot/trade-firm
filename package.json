@@ -1,6 +1,6 @@
 {
   "name": "trade-firm-precision-web",
-  "version": "7.1.2",
+  "version": "8.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
