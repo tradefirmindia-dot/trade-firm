@@ -4,8 +4,8 @@ import PageIntro from "../../components/PageIntro";
 import { blogPosts } from "../../lib/site-content";
 
 export const metadata = {
-  title: "Stock Market Research Blogs",
-  description: "Read Trade Firm research notes on price action, options, futures, risk management, IPO evaluation and disciplined trading process.",
+  title: "Stock Market Advisory & Research Insights India",
+  description: "Read professional Trade Firm insights on stock market advisory, NIFTY and BANK NIFTY, options, futures, equity research, IPOs and risk management.",
   alternates: { canonical: "https://www.tradefirm.in/blogs" },
 };
 
@@ -15,25 +15,25 @@ export default function BlogsPage() {
   return (
     <main className="inner-page">
       <PageIntro
-        eyebrow="TRADE FIRM BLOGS"
-        title="Research notes for"
-        accent="better market decisions."
-        text="Clear, evergreen articles on market structure, derivatives, IPO evaluation, position sizing and disciplined risk management."
+        eyebrow="TRADE FIRM INSIGHTS"
+        title="Advisory insight for"
+        accent="informed market decisions."
+        text="Detailed, evergreen articles on choosing advisory services, market structure, NIFTY and BANK NIFTY, derivatives, IPO evaluation and disciplined risk management."
         primaryLabel="Read featured note"
         primaryHref={`/blogs/${featured.slug}`}
       >
         <div className="blog-hero-stack">
           <span><BookOpen size={23} /></span>
-          <small>RESEARCH LIBRARY</small>
-          <h3>{blogPosts.length} focused notes</h3>
-          <p>Price Action • Options • Futures • IPOs • Risk</p>
+          <small>ADVISORY &amp; RESEARCH LIBRARY</small>
+          <h3>{blogPosts.length} professional insights</h3>
+          <p>Advisory • Research • Options • Futures • IPOs • Risk</p>
         </div>
       </PageIntro>
 
       <section className="section shell inner-section-first">
         <Link className="featured-blog" href={`/blogs/${featured.slug}`}>
-          <div className="featured-blog-visual"><FileText size={32} /><span>FEATURED RESEARCH NOTE</span><b>01</b></div>
-          <div className="featured-blog-copy"><span>{featured.category}</span><h2>{featured.title}</h2><p>{featured.excerpt}</p><div><small><Clock3 size={14} /> {featured.readTime}</small><b>Read note <ArrowRight size={16} /></b></div></div>
+          <div className="featured-blog-visual"><FileText size={32} /><span>FEATURED MARKET INSIGHT</span><b>01</b></div>
+          <div className="featured-blog-copy"><span>{featured.category}</span><h2>{featured.title}</h2><p>{featured.excerpt}</p><div><small><Clock3 size={14} /> {featured.readTime}</small><b>Read insight <ArrowRight size={16} /></b></div></div>
         </Link>
 
         <div className="blog-grid blog-index-grid">

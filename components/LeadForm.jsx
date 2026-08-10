@@ -77,7 +77,7 @@ export default function LeadForm({ compact = false }) {
 
       if (!response.ok) throw new Error(body.error || "Submission failed.");
 
-      setStatus("Request received. The Trade Firm team will contact you shortly.");
+      setStatus("Enquiry received. The Trade Firm advisory and research desk will contact you shortly.");
       setStatusType("success");
       setForm({ ...initialForm, startedAt: Date.now() });
     } catch (error) {
@@ -94,9 +94,9 @@ export default function LeadForm({ compact = false }) {
 
       <div className="form-heading">
         <div>
-          <span className="form-kicker">RESEARCH SERVICE ENQUIRY</span>
-          <h3>Get research service details.</h3>
-          <p>Select your market segment and preferred callback time. Our team will explain the research service, process and risk framework.</p>
+          <span className="form-kicker">ADVISORY &amp; RESEARCH ENQUIRY</span>
+          <h3>Speak with Trade Firm&apos;s desk.</h3>
+          <p>Select your area of interest and preferred callback time. Our team will explain the available service scope, research process and risk framework.</p>
         </div>
         <div className="form-shield"><ShieldCheck size={20} /></div>
       </div>
@@ -108,7 +108,7 @@ export default function LeadForm({ compact = false }) {
           <div className="phone-field"><span>+91</span><input name="phone" inputMode="numeric" maxLength="10" value={form.phone} onChange={change} placeholder="10-digit number" autoComplete="tel" required /></div>
         </label>
         <label>Available fund<select name="fund" value={form.fund} onChange={change}>{fundOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
-        <label>Market segment<select name="segment" value={form.segment} onChange={change}>{segmentOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
+        <label>Service interest<select name="segment" value={form.segment} onChange={change}>{segmentOptions.map((option) => <option key={option}>{option}</option>)}</select></label>
         <label>
           Preferred callback
           <select name="preferredTime" value={form.preferredTime} onChange={change}>
@@ -117,8 +117,8 @@ export default function LeadForm({ compact = false }) {
         </label>
       </div>
 
-      <label className="consent"><input type="checkbox" name="consent" checked={form.consent} onChange={change} /><span>I agree to be contacted by Trade Firm through call or WhatsApp regarding this enquiry.</span></label>
-      <button className="submit-btn" disabled={loading}><span>{loading ? "Sending request..." : "Request a call"}</span><ArrowRight size={18} /></button>
+      <label className="consent"><input type="checkbox" name="consent" checked={form.consent} onChange={change} /><span>I agree to be contacted by Trade Firm through call or WhatsApp about advisory and research services.</span></label>
+      <button className="submit-btn" disabled={loading}><span>{loading ? "Sending enquiry..." : "Request a desk call"}</span><ArrowRight size={18} /></button>
       <div className="privacy-line"><Check size={13} /> Consent recorded for call or WhatsApp follow-up.</div>
       {status && <div className={`form-status ${statusType}`}>{status}</div>}
     </form>

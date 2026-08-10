@@ -7,12 +7,12 @@ export const metadata = {
   metadataBase: new URL("https://www.tradefirm.in"),
 
   title: {
-  default: "Trade Firm | India's Premium Stock Market Research Platform",
+  default: "Trade Firm | Stock Market Advisory & Research Firm India",
   template: "%s | Trade Firm",
 },
 
   description:
-    "Trade Firm provides professional Indian stock-market research across major NSE and BSE indices, options, futures, F&O, equities, intraday, swing and IPO opportunities.",
+    "Trade Firm is an Indian stock market advisory and research firm covering NIFTY, BANK NIFTY, options, futures, equities, intraday, swing and IPO research.",
 icons: {
   icon: "/tf-brand-mark.svg",
   shortcut: "/tf-brand-mark.svg",
@@ -33,6 +33,13 @@ icons: {
     "options strategy research",
     "intraday market research",
     "stock market advisory India",
+    "stock market advisory firm in India",
+    "stock market advisory services",
+    "investment advisory firm India",
+    "options trading advisory",
+    "NIFTY advisory",
+    "BANK NIFTY advisory",
+    "stock market research analyst India",
   ],
 
   alternates: {
@@ -40,9 +47,9 @@ icons: {
   },
 
   openGraph: {
-    title: "Trade Firm | Premium Stock Market Research India",
+    title: "Trade Firm | Stock Market Advisory & Research Firm India",
     description:
-      "Professional research across Indian indices, options, futures, F&O, equities and IPOs with structured levels and disciplined risk management.",
+      "Professional stock market advisory and research across Indian indices, options, futures, equities and IPOs with structured levels and defined-risk thinking.",
     url: "https://www.tradefirm.in",
     siteName: "Trade Firm",
     locale: "en_IN",
@@ -52,16 +59,16 @@ icons: {
     url: "/og-image.jpg",
     width: 1200,
     height: 630,
-    alt: "Trade Firm - India's Premium Stock Market Research Platform",
+    alt: "Trade Firm - Stock Market Advisory and Research Firm India",
   },
 ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Trade Firm | Premium Stock Market Research India",
+    title: "Trade Firm | Stock Market Advisory & Research Firm India",
     description:
-      "Professional Indian stock-market research across indices, derivatives, equities and IPOs with a defined-risk process.",
+      "Professional Indian stock market advisory and research across indices, derivatives, equities and IPOs with a defined-risk process.",
       images: ["/og-image.jpg"],
   },
 
@@ -86,7 +93,7 @@ const schema = {
   logo: "https://www.tradefirm.in/icon.png",
   image: "https://www.tradefirm.in/og-image.jpg",
   description:
-    "Professional Indian stock-market research across indices, options, futures, F&O, equities and IPOs with disciplined risk management.",
+    "Professional Indian stock market advisory and research across indices, options, futures, F&O, equities and IPOs with disciplined risk management.",
   email: "tradefirmindia@gmail.com",
 
   sameAs: [
@@ -95,6 +102,15 @@ const schema = {
   ],
 
   areaServed: "IN",
+
+  knowsAbout: [
+    "Indian stock market advisory",
+    "Stock market research",
+    "NIFTY and BANK NIFTY",
+    "Options and futures research",
+    "Equity and IPO research",
+    "Trading risk management"
+  ],
 
   address: {
     "@type": "PostalAddress",

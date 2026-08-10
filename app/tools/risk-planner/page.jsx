@@ -3,8 +3,8 @@ import PageIntro from "../../../components/PageIntro";
 import RiskPlanner from "../../../components/RiskPlanner";
 
 export const metadata = {
-  title: "Risk Planner",
-  description: "Calculate planned rupee risk, stop-distance risk, actual order risk, target price and position value with the Trade Firm Risk Planner.",
+  title: "Trading Risk Planner for Advisory Decisions",
+  description: "Calculate planned rupee risk, stop-distance risk, actual order risk, target price and position value with Trade Firm's advisory Risk Planner.",
   alternates: { canonical: "https://www.tradefirm.in/tools/risk-planner" },
 };
 
@@ -12,11 +12,11 @@ export default function RiskPlannerPage() {
   return (
     <main className="inner-page">
       <PageIntro
-        eyebrow="TOOLS / RISK PLANNER"
+        eyebrow="ADVISORY TOOLS / RISK PLANNER"
         title="Check your trade risk"
         accent="before placing the order."
-        text="Enter trading capital, planned risk, Entry Price, Stop Loss, Qty and a Risk–Reward ratio from 1:1 to 1:10. The planner shows the actual rupee risk and target instantly."
-        primaryLabel="Get research service details"
+        text="Enter trading capital, planned risk, Entry Price, Stop Loss, Qty and a Risk–Reward ratio from 1:1 to 1:10. The planner makes the actual rupee risk and target reference visible instantly."
+        primaryLabel="Speak with advisory desk"
       />
 
       <section className="section shell inner-section-first risk-tool-section">

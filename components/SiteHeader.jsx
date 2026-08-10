@@ -38,7 +38,7 @@ export default function SiteHeader() {
     <header className="site-header">
       <Link className="brand" href="/" aria-label="Trade Firm home">
         <img src="/tf-brand-mark.svg" alt="Trade Firm official brand mark" />
-        <div><strong>TRADE FIRM</strong><span>TRADE • ANALYZE • GROW</span></div>
+        <div><strong>TRADE FIRM</strong><span>ADVISORY • RESEARCH</span></div>
       </Link>
 
       <button
@@ -52,7 +52,7 @@ export default function SiteHeader() {
       </button>
 
       <nav id="site-navigation" className={menuOpen ? "open" : ""} aria-label="Primary navigation">
-        <Link className={active("/research-services") ? "active" : ""} href="/research-services">Research Services</Link>
+        <Link className={active("/research-services") ? "active" : ""} href="/research-services">Advisory &amp; Research</Link>
         <details className={`nav-dropdown ${active("/tools") ? "active" : ""}`}>
           <summary>Tools <ChevronDown size={15} /></summary>
           <div className="nav-dropdown-panel">
@@ -63,7 +63,7 @@ export default function SiteHeader() {
         <Link href="/#tenx">10X THINK</Link>
         <Link className={active("/blogs") ? "active" : ""} href="/blogs">Blogs</Link>
         <Link className={active("/about-us") ? "active" : ""} href="/about-us">About Us</Link>
-        <Link href="/#lead" className="nav-cta">Request a call <ArrowRight size={15} /></Link>
+        <Link href="/#lead" className="nav-cta">Speak to our desk <ArrowRight size={15} /></Link>
       </nav>
     </header>
   );

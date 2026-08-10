@@ -3,8 +3,8 @@ import { ArrowRight, Calculator, Check, Gauge, ShieldCheck, Target } from "lucid
 import PageIntro from "../../components/PageIntro";
 
 export const metadata = {
-  title: "Research Tools",
-  description: "Use Trade Firm research tools to plan position risk, quantity and risk-to-reward before a market decision.",
+  title: "Advisory Risk Tools",
+  description: "Use Trade Firm advisory support tools to plan position risk, quantity and risk-to-reward before considering a market decision.",
   alternates: { canonical: "https://www.tradefirm.in/tools" },
 };
 
@@ -12,10 +12,10 @@ export default function ToolsPage() {
   return (
     <main className="inner-page">
       <PageIntro
-        eyebrow="TRADE FIRM TOOLS"
-        title="Make risk visible"
+        eyebrow="ADVISORY SUPPORT TOOLS"
+        title="Make risk measurable"
         accent="before execution."
-        text="Simple, focused tools that turn trading inputs into a clearer risk plan—without adding noise to the decision process."
+        text="Focused tools that turn trading inputs into a clearer risk plan and support responsible decisions alongside professional market research."
         primaryLabel="Open Risk Planner"
         primaryHref="/tools/risk-planner"
       >
@@ -30,8 +30,8 @@ export default function ToolsPage() {
 
       <section className="section shell inner-section-first">
         <div className="section-head split-head">
-          <div><span>AVAILABLE RESEARCH TOOL</span><h2>Risk Planner</h2></div>
-          <p>Connect capital, stop distance and order quantity before a trade. See the actual rupee risk and target immediately.</p>
+          <div><span>AVAILABLE ADVISORY TOOL</span><h2>Risk Planner</h2></div>
+          <p>Connect capital, stop distance and order quantity before considering a trade. See the actual rupee risk and target reference immediately.</p>
         </div>
 
         <article className="featured-tool-card">

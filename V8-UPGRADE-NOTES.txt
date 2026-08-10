@@ -1,8 +1,8 @@
-TRADE FIRM WEBSITE V8.0 — RESEARCH PLATFORM EDITION
+TRADE FIRM WEBSITE V8.1.4 — ADVISORY & RESEARCH FIRM EDITION
 
 WHAT IS NEW
-- Premium home page repositioned as an Indian stock-market research platform.
-- Research Services page covering major NSE/BSE indices, options, futures,
+- Premium home page repositioned as an Indian stock market advisory and research firm.
+- Advisory & Research Services page covering major NSE/BSE indices, options, futures,
   F&O, equities, intraday, swing/positional markets and IPO research.
 - Tools section with the existing Risk Planner moved to its own page.
 - Risk Planner now uses one clear client-entered Qty field; automatic suggested Qty and the confusing formula card were removed.
@@ -10,11 +10,17 @@ WHAT IS NEW
 - Selected ratio now calculates reward per unit and a Target Price.
 - Risk Planner labels now use Entry Price, Stop Loss and Trade Direction.
 - Homepage market-price ticker now uses server-side NSE/BSE exchange feeds for NIFTY 50, BANK NIFTY, NIFTY MIDCAP SELECT, SENSEX, BANKEX and FINNIFTY. It refreshes automatically and no longer depends on the broken TradingView widget.
-- Reworked public messaging into professional research-advisory language with a concise standard market-risk disclosure.
-- Blogs page plus six complete evergreen research articles.
+- Reworked public messaging into professional advisory and research language with responsible market-risk wording.
+- Blogs page with 15 evergreen advisory and research articles covering high-intent keyword clusters.
 - Proper About Us page, principles, market coverage and company story.
 - Updated navigation, footer, metadata, sitemap and mobile layouts.
-- Research Service Enquiry form wording and service options improved.
+- Advisory & Research Enquiry form wording improved.
+- FAQPage and Article structured data added for stronger search-engine context.
+- Mobile header now shows TRADE FIRM and ADVISORY • RESEARCH beside the official mark.
+- Desktop research-card height and inner-page spacing refined after visual QA.
+- Replaced awkward "research-led" labels with clearer professional wording.
+- Research process card content now fills its fixed grid height without the large empty lower area.
+- About story columns and headline sizing balanced to prevent uneven five-line wrapping.
 
 IMPORTANT ITEMS PRESERVED
 - Existing premium light UI and official Trade Firm brand mark.

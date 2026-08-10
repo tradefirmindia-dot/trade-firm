@@ -1,4 +1,4 @@
-TRADE FIRM RESEARCH PLATFORM — V8.0
+TRADE FIRM ADVISORY & RESEARCH WEBSITE — V8.1.4
 
 PRODUCTION BASELINE
 - Next.js 16
@@ -7,15 +7,17 @@ PRODUCTION BASELINE
 - Existing CRM and Telegram lead-delivery flow preserved
 
 INCLUDED
-- Home research platform and research-service enquiry form
-- Full Research Services page for indices, options, futures, F&O, equities,
+- Home advisory and research firm website with service enquiry form
+- Full Advisory & Research Services page for indices, options, futures, F&O, equities,
   intraday, swing/positional markets and IPO research
 - 10X THINK framework section
 - Dedicated Tools area and interactive Risk Planner with Qty support
 - Selectable Risk Planner risk–reward ratio from 1:1 through 1:10
-- Research Blogs index with six complete evergreen research notes
+- Advisory & Research Insights index with 15 complete evergreen articles
 - Proper About Us page and company principles
-- Research coverage, process, FAQ, SEO routes and professional market-risk wording
+- Advisory coverage, professional FAQs, Article/FAQ schema, SEO routes and market-risk wording
+- Responsive mobile header branding with TRADE FIRM / ADVISORY • RESEARCH
+- Compact research cards and inner-page spacing; all awkward "research-led" labels removed
 - Server-side lead validation, spam protection and duplicate handling
 - Optional direct sync into the Trade Firm CRM Supabase database
 - Optional Telegram lead notifications

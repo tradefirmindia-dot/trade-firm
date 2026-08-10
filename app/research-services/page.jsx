@@ -17,8 +17,8 @@ import PageIntro from "../../components/PageIntro";
 import { broadMarketIndices, majorIndices, researchServices, sectorIndices } from "../../lib/site-content";
 
 export const metadata = {
-  title: "Research Services",
-  description: "Explore Trade Firm research across Indian indices, options, futures, F&O, equities, intraday, swing, positional markets and IPOs.",
+  title: "Stock Market Advisory & Research Services India",
+  description: "Explore Trade Firm stock market advisory and research services across NIFTY, BANK NIFTY, options, futures, F&O, equities, intraday, swing and IPOs.",
   alternates: { canonical: "https://www.tradefirm.in/research-services" },
 };
 
@@ -28,13 +28,13 @@ export default function ResearchServicesPage() {
   return (
     <main className="inner-page">
       <PageIntro
-        eyebrow="RESEARCH SERVICES"
-        title="Complete Indian market research."
-        accent="One disciplined standard."
-        text="Structured research and research-backed market recommendations across NSE and BSE indices, options, futures, F&O, equities, intraday, swing, positional opportunities and IPOs."
+        eyebrow="ADVISORY & RESEARCH SERVICES"
+        title="Professional Indian market guidance."
+        accent="One professional standard."
+        text="Structured stock market advisory and research services across NSE and BSE indices, options, futures, F&O, equities, intraday, swing, positional opportunities and IPOs."
       >
         <div className="hero-index-panel">
-          <span>PRIMARY RESEARCH COVERAGE</span>
+          <span>PRIMARY ADVISORY COVERAGE</span>
           <div>{majorIndices.map((index) => <b key={index}>{index}</b>)}</div>
           <p>Major derivatives, cash-market benchmarks and volatility context.</p>
         </div>
@@ -42,8 +42,8 @@ export default function ResearchServicesPage() {
 
       <section className="section shell inner-section-first">
         <div className="section-head split-head">
-          <div><span>OUR RESEARCH COVERAGE</span><h2>Research organised by market, horizon and risk.</h2></div>
-          <p>Each service follows a clear process—market context, decision levels, invalidation, risk and review.</p>
+          <div><span>OUR SERVICE COVERAGE</span><h2>Advisory and research organised by market, horizon and risk.</h2></div>
+          <p>Each service follows a professional process—research rationale, actionable levels, invalidation, risk communication and review.</p>
         </div>
 
         <div className="service-detail-grid">
@@ -63,8 +63,8 @@ export default function ResearchServicesPage() {
       <section className="section index-universe-section">
         <div className="shell">
           <div className="section-head split-head">
-            <div><span>INDEX UNIVERSE</span><h2>Major, broad-market, sectoral and thematic coverage.</h2></div>
-            <p>The research universe prioritises actively followed markets while retaining broader NSE and BSE context.</p>
+            <div><span>ADVISORY UNIVERSE</span><h2>Major, broad-market, sectoral and thematic coverage.</h2></div>
+            <p>Our market universe prioritises actively followed indices while retaining broader NSE and BSE research context.</p>
           </div>
 
           <div className="index-universe-grid">
@@ -89,17 +89,17 @@ export default function ResearchServicesPage() {
 
       <section className="section shell research-format-section">
         <div className="research-format-copy">
-          <span>WHAT A RESEARCH VIEW MAY INCLUDE</span>
-          <h2>Clear information before a market decision.</h2>
-          <p>The exact format depends on the market and time horizon. The aim is to make the scenario, risk and invalidation understandable before execution.</p>
-          <Link className="primary-btn" href="/#lead">Get service details <ArrowRight size={17} /></Link>
+          <span>WHAT AN ADVISORY VIEW MAY INCLUDE</span>
+          <h2>Clear rationale before a market decision.</h2>
+          <p>The exact format depends on the selected service, market and time horizon. The aim is to make the scenario, actionable levels, risk and invalidation understandable before execution.</p>
+          <Link className="primary-btn" href="/#lead">Speak with our desk <ArrowRight size={17} /></Link>
         </div>
         <div className="research-format-list">
           {[
-            ["01", "Market context", "Trend, structure, volatility, sector strength and important events."],
-            ["02", "Decision levels", "Important zones, entry conditions and confirmation references."],
+            ["01", "Research rationale", "Trend, structure, volatility, sector strength, data and important events."],
+            ["02", "Actionable levels", "Important zones, entry conditions and confirmation references."],
             ["03", "Invalidation & risk", "Stop or invalidation context, position risk and risk-to-reward framework."],
-            ["04", "Objectives & review", "Scenario objectives, monitoring conditions and post-market review."],
+            ["04", "Communication & review", "Scenario objectives, monitoring conditions, updates and post-market review."],
           ].map(([number, title, text]) => <article key={number}><b>{number}</b><div><h3>{title}</h3><p>{text}</p></div></article>)}
         </div>
       </section>

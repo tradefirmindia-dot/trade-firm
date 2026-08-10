@@ -10,15 +10,15 @@ export default function SiteFooter() {
           <div>
             <strong>TRADE FIRM</strong>
             <span>TRADE • ANALYZE • GROW</span>
-            <p>Professional Indian stock-market research and defined-risk intelligence for serious market participants.</p>
+            <p>A professional Indian stock market advisory and research firm delivering process-led market intelligence with defined-risk thinking.</p>
           </div>
         </div>
 
         <div className="footer-column">
-          <b>Research</b>
-          <Link href="/research-services">Research Services</Link>
+          <b>Advisory &amp; Research</b>
+          <Link href="/research-services">Advisory &amp; Research Services</Link>
           <Link href="/#tenx">10X THINK</Link>
-          <Link href="/blogs">Research Blogs</Link>
+          <Link href="/blogs">Market Insights</Link>
           <Link href="/about-us">About Trade Firm</Link>
         </div>
         <div className="footer-column">
@@ -38,7 +38,7 @@ export default function SiteFooter() {
       </div>
 
       <div className="shell footer-bottom">
-        <p><b>Market risk:</b> Investments in securities market are subject to market risks. Read all related documents carefully before investing.</p>
+          <p><b>Market risk:</b> Investments in securities market are subject to market risks. Read all related documents carefully before investing. Research and advisory views do not assure or guarantee returns.</p>
         <span>© {new Date().getFullYear()} Trade Firm. All rights reserved.</span>
       </div>
     </footer>
