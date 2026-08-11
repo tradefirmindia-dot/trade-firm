@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowRight, Check, Compass, Eye, Layers3, ShieldCheck, Target, TrendingUp } from "lucide-react";
+import { ArrowRight, Check, Compass, Eye, Layers3, Mail, MapPin, Phone, ShieldCheck, Target, TrendingUp } from "lucide-react";
 import PageIntro from "../../components/PageIntro";
+import { siteIdentity } from "../../lib/site-identity";
 
 export const metadata = {
   title: "About Our Stock Market Advisory & Research Firm",
@@ -45,6 +46,17 @@ export default function AboutUsPage() {
             ].map(([Icon, title, text]) => <article key={title}><span><Icon size={23} /></span><h3>{title}</h3><p>{text}</p></article>)}
           </div>
         </div>
+      </section>
+
+      <section className="section shell identity-section">
+        <div className="section-head split-head"><div><span>OFFICIAL IDENTITY &amp; CONTACT</span><h2>Know where and how to reach Trade Firm.</h2></div><p>Verify service communication through the official channels published across tradefirm.in.</p></div>
+        <div className="identity-grid">
+          <article><MapPin size={22} /><small>MAIN BRANCH</small><h3>Thane, Maharashtra</h3></article>
+          <article><MapPin size={22} /><small>SECOND BRANCH</small><h3>Navi Mumbai, Maharashtra</h3></article>
+          <article><Phone size={22} /><small>OFFICIAL PHONE</small><h3><a href={`tel:${siteIdentity.phoneHref}`}>{siteIdentity.phoneDisplay}</a></h3></article>
+          <article><Mail size={22} /><small>OFFICIAL EMAIL</small><h3><a href={`mailto:${siteIdentity.email}`}>{siteIdentity.email}</a></h3></article>
+        </div>
+        <div className="identity-actions"><Link href="/trust-centre">Open Trust Centre <ArrowRight size={16} /></Link><Link href="/authors/trade-firm-research-desk">Meet the Research Desk <ArrowRight size={16} /></Link></div>
       </section>
 
       <section className="section shell about-coverage-section">

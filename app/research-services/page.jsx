@@ -23,6 +23,17 @@ export const metadata = {
 };
 
 const icons = [CandlestickChart, BarChart3, LineChart, ScanSearch, BriefcaseBusiness, Clock3, ShieldCheck, Building2, Landmark];
+const serviceLinks = [
+  "/nifty-bank-nifty-advisory",
+  "/options-derivatives-research",
+  "/options-derivatives-research",
+  "/options-derivatives-research",
+  "/equity-research",
+  "/stock-market-advisory-india",
+  "/equity-research",
+  "/ipo-research",
+  "/stock-market-research-india",
+];
 
 export default function ResearchServicesPage() {
   return (
@@ -54,6 +65,7 @@ export default function ResearchServicesPage() {
                 <div className="service-detail-head"><span><Icon size={22} /></span><small>{service.tag}</small><b>{String(index + 1).padStart(2, "0")}</b></div>
                 <h3>{service.title}</h3><p>{service.text}</p>
                 <ul>{service.points.map((point) => <li key={point}><Check size={14} /> {point}</li>)}</ul>
+                <Link className="service-detail-link" href={serviceLinks[index]}>Explore detailed research <ArrowRight size={15} /></Link>
               </article>
             );
           })}

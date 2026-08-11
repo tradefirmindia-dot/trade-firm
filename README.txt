@@ -1,44 +1,78 @@
-TRADE FIRM ADVISORY & RESEARCH WEBSITE — V8.1.4
+TRADE FIRM SEO AUTHORITY WEBSITE — V9.0.0
+=========================================
 
-PRODUCTION BASELINE
-- Next.js 16
-- Official Trade Firm brand assets preserved
-- Mobile-first light institutional interface
-- Existing CRM and Telegram lead-delivery flow preserved
+Approved base
+-------------
+This release is built on the approved v8.1.4 UI. The rejected v8.2.0 redesign was not used.
 
-INCLUDED
-- Home advisory and research firm website with service enquiry form
-- Full Advisory & Research Services page for indices, options, futures, F&O, equities,
-  intraday, swing/positional markets and IPO research
-- 10X THINK framework section
-- Dedicated Tools area and interactive Risk Planner with Qty support
-- Selectable Risk Planner risk–reward ratio from 1:1 through 1:10
-- Advisory & Research Insights index with 15 complete evergreen articles
-- Proper About Us page and company principles
-- Advisory coverage, professional FAQs, Article/FAQ schema, SEO routes and market-risk wording
-- Responsive mobile header branding with TRADE FIRM / ADVISORY • RESEARCH
-- Compact research cards and inner-page spacing; all awkward "research-led" labels removed
-- Server-side lead validation, spam protection and duplicate handling
-- Optional direct sync into the Trade Firm CRM Supabase database
-- Optional Telegram lead notifications
+Run locally
+-----------
+1. Open this folder in VS Code.
+2. Run: npm install
+3. Run: npm run dev
+4. Open: http://localhost:3000
 
-LOCAL SETUP
-1. Copy .env.example to .env.local.
-2. Add only the services you use.
-3. Run: npm install
-4. Run: npm run dev
-5. Open: http://localhost:3000
+Production test
+---------------
+npm run build
+npm start
 
-CRM CONNECTION
-Add the same Supabase project URL and server-side service-role key used by the
-Trade Firm CRM to these website environment variables:
+Deploy
+------
+Push the full project to the connected GitHub repository. Vercel can deploy it automatically after a successful build.
 
-CRM_SUPABASE_URL
-CRM_SUPABASE_SECRET_KEY
+Primary SEO service pages
+-------------------------
+/stock-market-advisory-india
+/stock-market-research-india
+/nifty-bank-nifty-advisory
+/options-derivatives-research
+/equity-research
+/ipo-research
 
-The secret key must remain server-side. Never rename it with a
-NEXT_PUBLIC_ prefix and never commit a real key or Telegram token to GitHub.
+Trust and authority pages
+-------------------------
+/trust-centre
+/contact
+/research-methodology
+/editorial-policy
+/risk-disclosure
+/grievance-redressal
+/privacy-policy
+/terms-of-use
+/authors/trade-firm-research-desk
+/sample-research-report
 
-DEPLOYMENT
-Push the updated project to the production branch connected to Vercel. Confirm
-the environment variables in Vercel before testing a real lead submission.
+Content and technical SEO
+-------------------------
+- 27 complete evergreen research and advisory guides
+- Article author, published/reviewed dates and Article schema
+- Organization, FinancialService, Website, Service, FAQ and Breadcrumb schema
+- XML sitemap generated at /sitemap.xml
+- robots.txt generated at /robots.txt
+- RSS feed generated at /rss.xml
+- Web app manifest generated at /manifest.webmanifest
+- Keyword clusters linked from home, services, blogs and footer
+- Responsive desktop, tablet and mobile UI
+
+Official contact details used
+-----------------------------
+Main branch: Thane, Maharashtra
+Second branch: Navi Mumbai, Maharashtra
+Email: tradefirmindia@gmail.com
+Phone: +91 91377 25793
+
+Important
+---------
+- RA/IA registration details were intentionally not added, as requested.
+- Add exact office street addresses only after they are confirmed.
+- The existing /api/leads CRM/Telegram pipeline was preserved.
+- Do not publish fabricated licence, address, performance or review information.
+- Ranking cannot be guaranteed. Google controls crawling, indexing and ranking.
+
+After deployment
+----------------
+1. Open https://www.tradefirm.in/sitemap.xml and confirm all URLs load.
+2. Submit sitemap.xml in Google Search Console once.
+3. Inspect the six primary SEO service URLs and request indexing where required.
+4. Follow SEO-90-DAY-OPERATIONS.md for the recurring work Google evaluates over time.

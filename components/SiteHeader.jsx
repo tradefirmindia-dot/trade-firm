@@ -8,6 +8,8 @@ import { usePathname } from "next/navigation";
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const servicePaths = ["/research-services", "/stock-market-advisory-india", "/stock-market-research-india", "/nifty-bank-nifty-advisory", "/options-derivatives-research", "/equity-research", "/ipo-research"];
+  const servicesActive = servicePaths.some((path) => active(path));
 
   useEffect(() => {
     setMenuOpen(false);
@@ -52,7 +54,18 @@ export default function SiteHeader() {
       </button>
 
       <nav id="site-navigation" className={menuOpen ? "open" : ""} aria-label="Primary navigation">
-        <Link className={active("/research-services") ? "active" : ""} href="/research-services">Advisory &amp; Research</Link>
+        <details className={`nav-dropdown services-dropdown ${servicesActive ? "active" : ""}`}>
+          <summary>Advisory &amp; Research <ChevronDown size={15} /></summary>
+          <div className="nav-dropdown-panel services-dropdown-panel">
+            <Link href="/research-services"><small>OVERVIEW</small><b>All Services</b></Link>
+            <Link href="/stock-market-advisory-india"><small>INDIA</small><b>Stock Market Advisory</b></Link>
+            <Link href="/stock-market-research-india"><small>RESEARCH</small><b>Market Research</b></Link>
+            <Link href="/nifty-bank-nifty-advisory"><small>INDICES</small><b>NIFTY &amp; BANK NIFTY</b></Link>
+            <Link href="/options-derivatives-research"><small>DERIVATIVES</small><b>Options &amp; F&amp;O</b></Link>
+            <Link href="/equity-research"><small>EQUITIES</small><b>Equity Research</b></Link>
+            <Link href="/ipo-research"><small>PRIMARY MARKET</small><b>IPO Research</b></Link>
+          </div>
+        </details>
         <details className={`nav-dropdown ${active("/tools") ? "active" : ""}`}>
           <summary>Tools <ChevronDown size={15} /></summary>
           <div className="nav-dropdown-panel">
@@ -63,7 +76,7 @@ export default function SiteHeader() {
         <Link href="/#tenx">10X THINK</Link>
         <Link className={active("/blogs") ? "active" : ""} href="/blogs">Blogs</Link>
         <Link className={active("/about-us") ? "active" : ""} href="/about-us">About Us</Link>
-        <Link href="/#lead" className="nav-cta">Speak to our desk <ArrowRight size={15} /></Link>
+        <Link href="/contact" className="nav-cta">Speak to our desk <ArrowRight size={15} /></Link>
       </nav>
     </header>
   );

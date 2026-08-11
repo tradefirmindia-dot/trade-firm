@@ -29,24 +29,28 @@ const researchCoverage = [
     title: "Index Advisory & Research",
     text: "Professional market guidance across NIFTY 50, BANK NIFTY, FINNIFTY, MIDCPNIFTY, SENSEX, BANKEX and broader benchmarks.",
     tag: "INDEX ADVISORY",
+    href: "/nifty-bank-nifty-advisory",
   },
   {
     icon: BarChart3,
     title: "Options & F&O Advisory",
     text: "Options and futures guidance built around price action, volatility, expiry context, actionable levels and defined risk.",
     tag: "DERIVATIVES ADVISORY",
+    href: "/options-derivatives-research",
   },
   {
     icon: LineChart,
     title: "Equity & Futures Advisory",
     text: "Structured views on selected NSE and BSE equities, stock futures, index futures, intraday, swing and positional opportunities.",
     tag: "EQUITY ADVISORY",
+    href: "/equity-research",
   },
   {
     icon: BrainCircuit,
     title: "IPO Research & Market Intelligence",
     text: "Independent business, financial, valuation and risk analysis for IPOs, supported by daily outlooks and event-driven market context.",
     tag: "INVESTMENT RESEARCH",
+    href: "/ipo-research",
   },
 ];
 
@@ -203,10 +207,10 @@ export default function Home() {
           <div className="head-action"><p>Index, derivatives, equity and primary-market services—organised by market, time horizon and defined risk.</p><Link href="/research-services">View all services <ArrowRight size={16} /></Link></div>
         </div>
         <div className="service-grid">
-          {researchCoverage.map(({ icon: Icon, title, text, tag }, index) => (
-            <article className="service-card" key={title}>
-              <div className="service-icon"><Icon size={22} /></div><span>{tag}</span><h3>{title}</h3><p>{text}</p><b>0{index + 1}</b>
-            </article>
+          {researchCoverage.map(({ icon: Icon, title, text, tag, href }, index) => (
+            <Link className="service-card" href={href} key={title}>
+              <div className="service-icon"><Icon size={22} /></div><span>{tag}</span><h3>{title}</h3><p>{text}</p><b>0{index + 1}</b><small>Explore service <ArrowRight size={14} /></small>
+            </Link>
           ))}
         </div>
       </section>
@@ -261,7 +265,7 @@ export default function Home() {
       <section className="section shell about-preview">
         <div className="about-preview-mark"><TrendingUp size={32} /><span>TRADE FIRM</span></div>
         <div><span>ABOUT THE FIRM</span><h2>Built from market experience. Structured for responsible guidance.</h2></div>
-        <div><p>Trade Firm is an Indian stock market advisory and research firm focused on indices, derivatives, equities, IPOs and risk-first decision frameworks.</p><Link href="/about-us">Why Trade Firm <ArrowRight size={16} /></Link></div>
+        <div><p>Trade Firm is an Indian stock market advisory and research firm focused on indices, derivatives, equities, IPOs and risk-first decision frameworks.</p><Link href="/about-us">Why Trade Firm <ArrowRight size={16} /></Link><Link href="/trust-centre">Trust Centre <ArrowRight size={16} /></Link></div>
       </section>
 
       <section className="section shell" id="faq">

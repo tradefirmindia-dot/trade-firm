@@ -1,0 +1,30 @@
+TRADE FIRM V9.0.0 — SEO AUTHORITY RELEASE
+=========================================
+
+Completed in the website
+------------------------
+- Approved v8.1.4 design retained.
+- Six search-intent service landing pages added.
+- 27 long-form evergreen content pages available.
+- Trust Centre, contact, research methodology, editorial policy, author profile,
+  risk disclosure, grievance redressal, privacy and terms added.
+- Thane and Navi Mumbai branch presence added without inventing street addresses.
+- Official email and phone added site-wide.
+- Organization/FinancialService, Website, Service, Article, FAQ and Breadcrumb
+  structured data implemented.
+- Internal links added across header, footer, home, service hub and articles.
+- Sitemap, robots, RSS and manifest upgraded.
+- Existing lead form and /api/leads delivery code preserved.
+
+Intentionally excluded
+----------------------
+- RA/IA numbers, licence documents and regulatory claims.
+- Pricing and payment collection.
+- Fabricated customer reviews, performance figures or physical addresses.
+
+Honest SEO expectation
+----------------------
+This release completes the on-site technical and content foundation that can be
+built today. Google ranking still depends on crawling, indexing, competition,
+content history, earned mentions/backlinks, real user engagement and ongoing
+publishing. No developer or agency can ethically guarantee top-10 positions.

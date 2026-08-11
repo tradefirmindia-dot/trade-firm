@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Instagram, Mail, Send } from "lucide-react";
+import { Instagram, Mail, MapPin, Phone, Send } from "lucide-react";
+import { siteIdentity } from "../lib/site-identity";
 
 export default function SiteFooter() {
   return (
@@ -16,29 +17,37 @@ export default function SiteFooter() {
 
         <div className="footer-column">
           <b>Advisory &amp; Research</b>
-          <Link href="/research-services">Advisory &amp; Research Services</Link>
-          <Link href="/#tenx">10X THINK</Link>
+          <Link href="/stock-market-advisory-india">Stock Market Advisory India</Link>
+          <Link href="/stock-market-research-india">Stock Market Research India</Link>
+          <Link href="/nifty-bank-nifty-advisory">NIFTY &amp; BANK NIFTY</Link>
+          <Link href="/options-derivatives-research">Options &amp; Derivatives</Link>
+          <Link href="/equity-research">Equity Research</Link>
+          <Link href="/ipo-research">IPO Research</Link>
+        </div>
+        <div className="footer-column">
+          <b>Research Resources</b>
+          <Link href="/research-services">All Services</Link>
+          <Link href="/tools/risk-planner">Risk Planner</Link>
+          <Link href="/sample-research-report">Sample Research Format</Link>
+          <Link href="/research-methodology">Research Methodology</Link>
+          <Link href="/authors/trade-firm-research-desk">Research Desk</Link>
           <Link href="/blogs">Market Insights</Link>
           <Link href="/about-us">About Trade Firm</Link>
         </div>
         <div className="footer-column">
-          <b>Tools & Coverage</b>
-          <Link href="/tools/risk-planner">Risk Planner</Link>
-          <span>NIFTY 50</span>
-          <span>BANK NIFTY</span>
-          <span>FINNIFTY & SENSEX</span>
-        </div>
-        <div className="footer-column">
           <b>Contact</b>
-          <a href="mailto:tradefirmindia@gmail.com"><Mail size={16} /> Email</a>
-          <a href="https://t.me/TRADE_FIRM" target="_blank" rel="noopener noreferrer"><Send size={16} /> Telegram</a>
-          <a href="https://instagram.com/tradefirmindia" target="_blank" rel="noopener noreferrer"><Instagram size={16} /> Instagram</a>
-          <Link href="/#lead">Request a callback</Link>
+          <a href={`tel:${siteIdentity.phoneHref}`}><Phone size={16} /> {siteIdentity.phoneDisplay}</a>
+          <a href={`mailto:${siteIdentity.email}`}><Mail size={16} /> {siteIdentity.email}</a>
+          <span><MapPin size={16} /> Thane, Maharashtra</span>
+          <span><MapPin size={16} /> Navi Mumbai, Maharashtra</span>
+          <a href={siteIdentity.socials.telegram} target="_blank" rel="noopener noreferrer"><Send size={16} /> Telegram</a>
+          <a href={siteIdentity.socials.instagram} target="_blank" rel="noopener noreferrer"><Instagram size={16} /> Instagram</a>
+          <Link href="/contact">Contact &amp; callback</Link>
         </div>
       </div>
 
       <div className="shell footer-bottom">
-          <p><b>Market risk:</b> Investments in securities market are subject to market risks. Read all related documents carefully before investing. Research and advisory views do not assure or guarantee returns.</p>
+        <div><p><b>Market risk:</b> Investments in securities market are subject to market risks. Read all related documents carefully before investing. Research and advisory views do not assure or guarantee returns.</p><nav aria-label="Legal and trust links"><Link href="/trust-centre">Trust Centre</Link><Link href="/editorial-policy">Editorial Policy</Link><Link href="/risk-disclosure">Risk Disclosure</Link><Link href="/grievance-redressal">Grievance Redressal</Link><Link href="/privacy-policy">Privacy</Link><Link href="/terms-of-use">Terms</Link></nav></div>
         <span>© {new Date().getFullYear()} Trade Firm. All rights reserved.</span>
       </div>
     </footer>

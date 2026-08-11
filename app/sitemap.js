@@ -1,7 +1,9 @@
 import { blogPosts } from "../lib/site-content";
+import { seoServicePageList } from "../lib/seo-pages";
+import { contentDates, siteIdentity } from "../lib/site-identity";
 
 export default function sitemap() {
-  const updated = new Date();
+  const updated = new Date(contentDates.modified);
   const routes = [
     ["", "weekly", 1],
     ["/research-services", "weekly", 0.9],
@@ -9,17 +11,33 @@ export default function sitemap() {
     ["/tools/risk-planner", "monthly", 0.9],
     ["/blogs", "weekly", 0.8],
     ["/about-us", "monthly", 0.7],
+    ["/contact", "monthly", 0.8],
+    ["/trust-centre", "monthly", 0.75],
+    ["/research-methodology", "monthly", 0.75],
+    ["/editorial-policy", "monthly", 0.6],
+    ["/risk-disclosure", "monthly", 0.7],
+    ["/grievance-redressal", "monthly", 0.6],
+    ["/privacy-policy", "yearly", 0.4],
+    ["/terms-of-use", "yearly", 0.4],
+    ["/authors/trade-firm-research-desk", "monthly", 0.7],
+    ["/sample-research-report", "monthly", 0.75],
   ];
 
   return [
     ...routes.map(([path, changeFrequency, priority]) => ({
-      url: `https://www.tradefirm.in${path}`,
+      url: `${siteIdentity.url}${path}`,
       lastModified: updated,
       changeFrequency,
       priority,
     })),
+    ...seoServicePageList.map((page) => ({
+      url: `${siteIdentity.url}/${page.slug}`,
+      lastModified: updated,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    })),
     ...blogPosts.map((post) => ({
-      url: `https://www.tradefirm.in/blogs/${post.slug}`,
+      url: `${siteIdentity.url}/blogs/${post.slug}`,
       lastModified: updated,
       changeFrequency: "monthly",
       priority: 0.65,

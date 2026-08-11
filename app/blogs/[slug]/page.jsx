@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check, Clock3, ShieldCheck } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Clock3, ExternalLink, ShieldCheck } from "lucide-react";
 import { notFound } from "next/navigation";
 import { blogPosts, getBlogPost } from "../../../lib/site-content";
+import { contentDates, siteIdentity } from "../../../lib/site-identity";
 
 export function generateStaticParams() {
   return blogPosts.map((post) => ({ slug: post.slug }));
@@ -32,20 +33,37 @@ export default async function BlogPostPage({ params }) {
   const post = getBlogPost(slug);
   if (!post) notFound();
 
-  const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 2);
+  const related = blogPosts
+    .filter((item) => item.slug !== post.slug)
+    .sort((a, b) => Number(b.category === post.category) - Number(a.category === post.category))
+    .slice(0, 3);
+  const published = post.published || contentDates.published;
+  const updated = post.updated || contentDates.modified;
+  const pageUrl = `${siteIdentity.url}/blogs/${post.slug}`;
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
-    mainEntityOfPage: `https://www.tradefirm.in/blogs/${post.slug}`,
-    image: "https://www.tradefirm.in/og-image.jpg",
-    author: { "@type": "Organization", name: "Trade Firm", url: "https://www.tradefirm.in" },
-    publisher: {
-      "@type": "Organization",
-      name: "Trade Firm",
-      logo: { "@type": "ImageObject", url: "https://www.tradefirm.in/icon.png" },
-    },
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${pageUrl}#article`,
+        headline: post.title,
+        description: post.excerpt,
+        mainEntityOfPage: pageUrl,
+        image: `${siteIdentity.url}/og-image.jpg`,
+        datePublished: published,
+        dateModified: updated,
+        author: { "@id": `${siteIdentity.url}/authors/trade-firm-research-desk#author` },
+        publisher: { "@id": `${siteIdentity.url}/#organization` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: siteIdentity.url },
+          { "@type": "ListItem", position: 2, name: "Blogs", item: `${siteIdentity.url}/blogs` },
+          { "@type": "ListItem", position: 3, name: post.title, item: pageUrl },
+        ],
+      },
+    ],
   };
 
   return (
@@ -56,6 +74,11 @@ export default async function BlogPostPage({ params }) {
         <div className="article-meta"><span>{post.category}</span><small><Clock3 size={14} /> {post.readTime}</small></div>
         <h1>{post.title}</h1>
         <p className="article-lead">{post.excerpt}</p>
+        <div className="article-trustline">
+          <span>By <Link href="/authors/trade-firm-research-desk">Trade Firm Research Desk</Link></span>
+          <span>Published {new Date(published).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</span>
+          <span>Reviewed {new Date(updated).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</span>
+        </div>
         <div className="article-divider"><i /></div>
 
         <div className="article-content">
@@ -69,7 +92,8 @@ export default async function BlogPostPage({ params }) {
           ))}
         </div>
 
-        <aside className="article-disclosure"><ShieldCheck size={21} /><div><b>Advisory and research scope</b><p>This article explains Trade Firm&apos;s market research framework and general observations. Service scope can vary. Consider your objectives, time horizon and risk capacity before acting on any market view.</p></div></aside>
+        <aside className="article-source-box"><ExternalLink size={21} /><div><b>Primary-source guidance</b><p>For current rules, filings and product information, verify relevant details through official sources such as <a href="https://www.sebi.gov.in" target="_blank" rel="noopener noreferrer">SEBI</a>, <a href="https://www.nseindia.com" target="_blank" rel="noopener noreferrer">NSE India</a> and <a href="https://www.bseindia.com" target="_blank" rel="noopener noreferrer">BSE India</a>.</p></div></aside>
+        <aside className="article-disclosure"><ShieldCheck size={21} /><div><b>Advisory and research scope</b><p>This article explains Trade Firm&apos;s market research framework and general observations. It is not a guaranteed outcome or a substitute for understanding service scope, suitability and market risk.</p></div></aside>
       </article>
 
       <section className="section related-posts">
