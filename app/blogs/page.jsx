@@ -6,8 +6,8 @@ import { blogPosts } from "../../lib/site-content";
 import { siteIdentity } from "../../lib/site-identity";
 
 export const metadata = {
-  title: "60 Stock Market Research & Advisory Guides India",
-  description: "Read 60 TRADE FIRM expert guides across stock market advisory, NIFTY, BANK NIFTY, options, futures, equity research, IPOs and risk management.",
+  title: "Stock Market Research & Advisory Insights India",
+  description: "Read dated TRADE FIRM market notes and expert guides across Indian stock market advisory, NIFTY, BANK NIFTY, derivatives, IPOs and risk management.",
   alternates: { canonical: "https://www.tradefirm.in/blogs" },
 };
 
@@ -22,7 +22,7 @@ export default function BlogsPage() {
         "@id": `${url}#collection`,
         url,
         name: "TRADE FIRM Stock Market Research and Advisory Guides",
-        description: "A 60-guide Indian stock market research and risk-management library.",
+        description: `A ${blogPosts.length}-article Indian stock market research, advisory and risk-management library.`,
         isPartOf: { "@id": `${siteIdentity.url}/#website` },
         mainEntity: {
           "@type": "ItemList",
@@ -52,7 +52,7 @@ export default function BlogsPage() {
         eyebrow="TRADE FIRM INSIGHTS"
         title="Advisory insight for"
         accent="informed market decisions."
-        text="Detailed, evergreen articles on choosing advisory services, market structure, NIFTY and BANK NIFTY, derivatives, IPO evaluation and disciplined risk management."
+        text="Dated market notes and detailed guides on advisory services, market structure, NIFTY and BANK NIFTY, derivatives, IPO evaluation and disciplined risk management."
         primaryLabel="Read featured note"
         primaryHref={`/blogs/${featured.slug}`}
       >

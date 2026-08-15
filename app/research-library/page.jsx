@@ -7,7 +7,7 @@ import { siteIdentity } from "../../lib/site-identity";
 
 export const metadata = {
   title: "Indian Stock Market Research Library",
-  description: "Explore eight TRADE FIRM research pillars and 60 expert guides on advisory, NIFTY, BANK NIFTY, options, futures, equities, IPOs, price action and risk.",
+  description: "Explore eight TRADE FIRM research pillars, dated market notes and expert guides on advisory, Indian indices, derivatives, equities, IPOs and risk.",
   keywords: ["stock market research library India", "TRADE FIRM research advisory", "Indian market education"],
   alternates: { canonical: `${siteIdentity.url}/research-library` },
   openGraph: {
@@ -28,7 +28,7 @@ export default function ResearchLibraryPage() {
         "@id": `${url}#collection`,
         url,
         name: "TRADE FIRM Indian Stock Market Research Library",
-        description: "Eight topic pillars connecting 60 expert Indian stock market research and risk guides.",
+        description: `Eight topic pillars connecting ${blogPosts.length} Indian stock market research, advisory and risk articles.`,
         isPartOf: { "@id": `${siteIdentity.url}/#website` },
         publisher: { "@id": `${siteIdentity.url}/#organization` },
         mainEntity: {
@@ -59,7 +59,7 @@ export default function ResearchLibraryPage() {
         eyebrow="TRADE FIRM RESEARCH LIBRARY"
         title="Eight research pillars."
         accent="One connected decision system."
-        text="Explore 60 expert guides organised around advisory due diligence, Indian indices, derivatives, equities, IPOs, price action and measurable risk."
+        text={`Explore ${blogPosts.length} dated notes and expert guides organised around advisory due diligence, Indian indices, derivatives, equities, IPOs, price action and measurable risk.`}
         primaryLabel="Browse all insights"
         primaryHref="/blogs"
       >

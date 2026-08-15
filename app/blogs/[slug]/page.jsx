@@ -59,6 +59,11 @@ export default async function BlogPostPage({ params }) {
   const related = [...sameCluster, ...fallback].slice(0, 5);
   const published = post.published || contentDates.published;
   const updated = post.updated || contentDates.modified;
+  const sources = post.sources || [
+    { name: "SEBI", url: "https://www.sebi.gov.in" },
+    { name: "NSE India", url: "https://www.nseindia.com" },
+    { name: "BSE India", url: "https://www.bseindia.com" },
+  ];
   const pageUrl = `${siteIdentity.url}/blogs/${post.slug}`;
   const articleSchema = {
     "@context": "https://schema.org",
@@ -79,7 +84,7 @@ export default async function BlogPostPage({ params }) {
         keywords: [post.category, ...(cluster?.keywords || [])],
         isPartOf: { "@id": `${siteIdentity.url}/research-library/${clusterSlug}#collection` },
         about: (cluster?.keywords || []).map((name) => ({ "@type": "Thing", name })),
-        citation: ["https://www.sebi.gov.in", "https://www.nseindia.com", "https://www.bseindia.com"],
+        citation: sources.map((source) => source.url),
         author: { "@id": `${siteIdentity.url}/authors/trade-firm-research-desk#author` },
         publisher: { "@id": `${siteIdentity.url}/#organization` },
       },
@@ -137,7 +142,7 @@ export default async function BlogPostPage({ params }) {
           </div>
         </aside>
 
-        <aside className="article-source-box"><ExternalLink size={21} /><div><b>Primary-source guidance</b><p>For current rules, filings and product information, verify relevant details through official sources such as <a href="https://www.sebi.gov.in" target="_blank" rel="noopener noreferrer">SEBI</a>, <a href="https://www.nseindia.com" target="_blank" rel="noopener noreferrer">NSE India</a> and <a href="https://www.bseindia.com" target="_blank" rel="noopener noreferrer">BSE India</a>.</p></div></aside>
+        <aside className="article-source-box"><ExternalLink size={21} /><div><b>Primary-source guidance</b><p>Verify current values, rules and product information through {sources.map((source, index) => <span key={source.url}>{index > 0 ? " • " : ""}<a href={source.url} target="_blank" rel="noopener noreferrer">{source.name}</a></span>)}.</p></div></aside>
         <aside className="article-disclosure"><ShieldCheck size={21} /><div><b>Advisory and research scope</b><p>This article explains Trade Firm&apos;s market research framework and general observations. It is not a guaranteed outcome or a substitute for understanding service scope, suitability and market risk.</p></div></aside>
       </article>
 

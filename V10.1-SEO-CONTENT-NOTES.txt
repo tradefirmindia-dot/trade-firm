@@ -1,0 +1,29 @@
+TRADE FIRM V10.1.0 — REGULAR SEO CONTENT START
+================================================
+
+Completed in this update
+------------------------
+- Added the first original dated market-close research note using the
+  14 August 2026 NSE/BSE index snapshot.
+- Increased the research library from 60 to 61 published articles.
+- Added primary-source URLs to article schema and the visible source box.
+- Removed hard-coded article counts so the Blogs and Research Library pages
+  update automatically as new content is added.
+- Added REGULAR-SEO-CONTENT-SYSTEM.md with a weekly and monthly cadence.
+- Production build passed and all 94 sitemap URLs returned HTTP 200 locally.
+
+External authority audit
+------------------------
+- The backlink document in V10 was a campaign playbook, not a record of live
+  backlink placements.
+- No publicly discoverable TRADE FIRM directory listing or indexed third-party
+  citation was verified during the 15 August 2026 audit.
+- Business profile creation still requires the exact public legal/business
+  name, a verified customer-facing address or valid service-area setup, public
+  hours and consistent owner-controlled contact details.
+
+Quality rule
+------------
+Do not buy bulk backlinks or create fake offices/reviews. Use accurate entity
+profiles, original research, personalised editorial outreach and real local or
+professional relationships.
