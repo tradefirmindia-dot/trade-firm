@@ -22,6 +22,7 @@ import LeadForm from "../components/LeadForm";
 import MarketTicker from "../components/MarketTicker";
 import ResearchConsole from "../components/ResearchConsole";
 import { blogPosts } from "../lib/site-content";
+import { contentDates, siteIdentity } from "../lib/site-identity";
 
 const researchCoverage = [
   {
@@ -89,26 +90,42 @@ const faqs = [
   ],
 ];
 
-const faqSchema = {
+const homeSchema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map(([question, answer]) => ({
-    "@type": "Question",
-    name: question,
-    acceptedAnswer: { "@type": "Answer", text: answer },
-  })),
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${siteIdentity.url}/#webpage`,
+      url: siteIdentity.url,
+      name: "TRADE FIRM Research Advisory | Stock Market India",
+      description: "Indian stock market research advisory across indices, options, futures, equities and IPOs with a defined-risk process.",
+      dateModified: contentDates.modified,
+      isPartOf: { "@id": `${siteIdentity.url}/#website` },
+      about: { "@id": `${siteIdentity.url}/#organization` },
+      primaryImageOfPage: { "@type": "ImageObject", url: `${siteIdentity.url}/og-image.jpg` },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteIdentity.url}/#faq`,
+      mainEntity: faqs.map(([question, answer]) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: { "@type": "Answer", text: answer },
+      })),
+    },
+  ],
 };
 
 export default function Home() {
   return (
     <main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }} />
       <section className="hero shell" id="home">
         <div className="hero-copy">
-          <div className="eyebrow"><i /> INDIA · STOCK MARKET ADVISORY &amp; RESEARCH</div>
+          <div className="eyebrow"><i /> TRADE FIRM RESEARCH ADVISORY · INDIA</div>
           <h1>Professional research.<br /><span>Responsible advisory.</span></h1>
           <p className="hero-text">
-            Trade Firm is a professional Indian stock market advisory and research firm delivering structured market views across indices, options, futures, equities, intraday, swing and IPOs—with clear rationale and defined risk.
+            TRADE FIRM Research Advisory is a professional Indian stock market research and advisory firm delivering structured views across indices, options, futures, equities, intraday, swing and IPOs—with clear rationale and defined risk.
           </p>
 
           <div className="hero-actions">
@@ -220,8 +237,8 @@ export default function Home() {
           <div className="tools-preview-copy">
             <div className="eyebrow"><i /> ADVISORY SUPPORT TOOLS</div>
             <h2>Make risk measurable before acting on a market view.</h2>
-            <p>Use the Risk Planner to connect capital, risk percentage, entry, stop and quantity before considering a trade decision.</p>
-            <Link href="/tools/risk-planner" className="primary-btn">Open Risk Planner <ArrowRight size={17} /></Link>
+            <p>Use three free calculators for position sizing, cost-adjusted risk–reward and drawdown-recovery math before considering a trade decision.</p>
+            <Link href="/tools" className="primary-btn">Explore all risk tools <ArrowRight size={17} /></Link>
           </div>
           <div className="tool-preview-card">
             <div className="tool-preview-top"><span><Calculator size={20} /></span><div><small>TOOLS / POSITION SIZING</small><h3>Risk Planner</h3></div><b>LIVE TOOL</b></div>

@@ -1,11 +1,12 @@
 # Trade Firm — 90-day SEO operations system
 
-The website-side foundation is already included in v9.0.0. This file separates what is completed in code from the recurring work that must happen after deployment because Google evaluates the live site over time.
+The website-side foundation is included in v10.0.0. This file separates completed code from recurring work that must happen after deployment because search engines evaluate the live site and real user behaviour over time.
 
 ## Completed now
 
 - Six dedicated commercial-intent service pages.
-- Twenty-seven complete evergreen guides covering advisory, research, indices, derivatives, equities, IPOs and risk.
+- Sixty complete evergreen guides organised into eight substantial research pillars.
+- Three free calculators designed to answer real risk questions and earn citations.
 - Trust, identity, methodology, author, risk and grievance architecture.
 - Organization, service, article, FAQ and breadcrumb structured data.
 - Sitemap, robots, RSS, canonical URLs, metadata and deep internal linking.
@@ -13,9 +14,9 @@ The website-side foundation is already included in v9.0.0. This file separates w
 
 ## Days 1–7: deploy and validate
 
-1. Deploy v9.0.0 and confirm every URL in `/sitemap.xml` returns a normal page.
+1. Deploy v10.0.0 and confirm every URL in `/sitemap.xml` returns a normal page.
 2. In Google Search Console, submit `https://www.tradefirm.in/sitemap.xml` once.
-3. Inspect and request indexing for the home page and six priority service pages.
+3. Inspect the home page, research library and six priority service pages. Request indexing only where required.
 4. Check Page indexing, HTTPS and Core Web Vitals after Google processes the deployment.
 5. Add exact branch street addresses only after they are final and consistent across every official listing.
 
@@ -33,7 +34,7 @@ The website-side foundation is already included in v9.0.0. This file separates w
 2. Add sections only where a real query exposes a missing reader question.
 3. Improve titles and descriptions for pages receiving impressions but weak clicks; avoid changing several variables every day.
 4. Add internal links from relevant articles to the service page that answers the next reader question.
-5. Publish at least one deeply researched, source-supported article each week.
+5. Refresh or extend one existing guide from real query data each week. Do not publish more pages merely to increase the count.
 
 ## Days 61–90: build topical authority
 

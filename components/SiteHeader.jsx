@@ -39,7 +39,7 @@ export default function SiteHeader() {
   return (
     <header className="site-header">
       <Link className="brand" href="/" aria-label="Trade Firm home">
-        <img src="/tf-brand-mark.svg" alt="Trade Firm official brand mark" />
+        <img src="/tf-brand-mark.svg" alt="Trade Firm official brand mark" width="46" height="46" />
         <div><strong>TRADE FIRM</strong><span>ADVISORY • RESEARCH</span></div>
       </Link>
 
@@ -71,10 +71,12 @@ export default function SiteHeader() {
           <div className="nav-dropdown-panel">
             <Link href="/tools"><small>RESEARCH TOOLS</small><b>All Tools</b></Link>
             <Link href="/tools/risk-planner"><small>POSITION SIZING</small><b>Risk Planner</b></Link>
+            <Link href="/tools/risk-reward-calculator"><small>DECISION MATH</small><b>Risk–Reward Calculator</b></Link>
+            <Link href="/tools/drawdown-recovery-calculator"><small>CAPITAL RISK</small><b>Drawdown Calculator</b></Link>
           </div>
         </details>
         <Link href="/#tenx">10X THINK</Link>
-        <Link className={active("/blogs") ? "active" : ""} href="/blogs">Blogs</Link>
+        <Link className={active("/blogs") || active("/research-library") ? "active" : ""} href="/blogs">Blogs</Link>
         <Link className={active("/about-us") ? "active" : ""} href="/about-us">About Us</Link>
         <Link href="/contact" className="nav-cta">Speak to our desk <ArrowRight size={15} /></Link>
       </nav>

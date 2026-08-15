@@ -1,6 +1,7 @@
 import { Check, ShieldCheck } from "lucide-react";
 import PageIntro from "../../../components/PageIntro";
 import RiskPlanner from "../../../components/RiskPlanner";
+import { siteIdentity } from "../../../lib/site-identity";
 
 export const metadata = {
   title: "Trading Risk Planner for Advisory Decisions",
@@ -9,8 +10,34 @@ export const metadata = {
 };
 
 export default function RiskPlannerPage() {
+  const url = `${siteIdentity.url}/tools/risk-planner`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        name: "TRADE FIRM Trading Risk Planner",
+        url,
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "Any web browser",
+        isAccessibleForFree: true,
+        description: "A position-sizing and rupee-risk calculator using capital, risk percentage, entry, stop and order quantity.",
+        provider: { "@id": `${siteIdentity.url}/#organization` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: siteIdentity.url },
+          { "@type": "ListItem", position: 2, name: "Tools", item: `${siteIdentity.url}/tools` },
+          { "@type": "ListItem", position: 3, name: "Risk Planner", item: url },
+        ],
+      },
+    ],
+  };
+
   return (
     <main className="inner-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <PageIntro
         eyebrow="ADVISORY TOOLS / RISK PLANNER"
         title="Check your trade risk"

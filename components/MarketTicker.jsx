@@ -47,8 +47,10 @@ export default function MarketTicker() {
 
   useEffect(() => {
     let active = true;
+    let interval;
 
     const loadPrices = async () => {
+      if (document.hidden) return;
       try {
         const response = await fetch("/api/market-prices", { cache: "no-store" });
         if (!response.ok) throw new Error("Market feed unavailable");
@@ -62,21 +64,28 @@ export default function MarketTicker() {
       }
     };
 
-    loadPrices();
-    const interval = window.setInterval(loadPrices, 60000);
+    const initialLoad = window.setTimeout(loadPrices, 900);
+    interval = window.setInterval(loadPrices, 120000);
+    const onVisibilityChange = () => {
+      if (!document.hidden) loadPrices();
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+
     return () => {
       active = false;
+      window.clearTimeout(initialLoad);
       window.clearInterval(interval);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
     };
   }, []);
 
   const feedNote = useMemo(() => {
     if (feedState === "loading") return "Connecting to exchange feeds…";
     if (feedState === "waiting") return "Exchange feed reconnecting automatically";
-    if (!generatedAt) return "Exchange feeds · Auto-refresh 60 sec";
+    if (!generatedAt) return "Exchange feeds · Auto-refresh 2 min";
     const date = new Date(generatedAt);
     if (Number.isNaN(date.getTime())) return "Exchange feeds · Auto-refresh 60 sec";
-    return `Updated ${date.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })} · Auto-refresh 60 sec`;
+    return `Updated ${date.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })} · Auto-refresh 2 min`;
   }, [feedState, generatedAt]);
 
   return (

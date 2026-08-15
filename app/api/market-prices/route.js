@@ -2,6 +2,7 @@ const NSE_INDICES_URL = "https://www.nseindia.com/api/allIndices";
 const BSE_INDICES_URL = "https://api.bseindia.com/BseIndiaAPI/api/IndexMovers/w";
 const MONEYCONTROL_SENSEX_URL = "https://priceapi.moneycontrol.com/pricefeed/notapplicable/inidicesindia/in%3BSEN";
 const GOOGLE_BANKEX_URL = "https://www.google.com/finance/quote/BSE-BANK:INDEXBOM?hl=en";
+const FEED_TIMEOUT_MS = 3500;
 
 const QUOTE_ORDER = [
   { key: "nifty50", name: "NIFTY 50", exchange: "NSE" },
@@ -23,7 +24,7 @@ function toNumber(value) {
 
 async function fetchJson(url, headers, cacheOptions = { next: { revalidate: 60 } }) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 8000);
+  const timeout = setTimeout(() => controller.abort(), FEED_TIMEOUT_MS);
 
   try {
     const response = await fetch(url, {
@@ -41,7 +42,7 @@ async function fetchJson(url, headers, cacheOptions = { next: { revalidate: 60 }
 
 async function fetchText(url, headers) {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 15000);
+  const timeout = setTimeout(() => controller.abort(), FEED_TIMEOUT_MS);
 
   try {
     const response = await fetch(url, {
@@ -78,9 +79,9 @@ async function fetchBseIndices() {
   };
 
   try {
-    return await fetchJson(`${BSE_INDICES_URL}?ddlindex=18&flag=1&source=trade-firm`, headers, { cache: "no-store" });
+    return await fetchJson(`${BSE_INDICES_URL}?ddlindex=18&flag=1&source=trade-firm`, headers);
   } catch {
-    return fetchJson(BSE_INDICES_URL, headers, { cache: "no-store" });
+    return fetchJson(BSE_INDICES_URL, headers);
   }
 }
 
@@ -196,7 +197,7 @@ export async function GET() {
     },
     {
       headers: {
-        "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+        "Cache-Control": "public, s-maxage=60, stale-while-revalidate=600",
       },
     },
   );

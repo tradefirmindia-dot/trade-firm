@@ -1,4 +1,4 @@
-TRADE FIRM SEO AUTHORITY WEBSITE — V9.0.0
+TRADE FIRM SEO MAX WEBSITE — V10.0.0
 =========================================
 
 Approved base
@@ -45,15 +45,30 @@ Trust and authority pages
 
 Content and technical SEO
 -------------------------
-- 27 complete evergreen research and advisory guides
-- Article author, published/reviewed dates and Article schema
-- Organization, FinancialService, Website, Service, FAQ and Breadcrumb schema
+- 60 original evergreen research and advisory guides
+- 8 substantial research-pillar/topic-hub pages at /research-library
+- 3 free linkable calculators: Risk Planner, Risk–Reward and Drawdown Recovery
+- BlogPosting author, published/reviewed dates, topic, word-count and source schema
+- Organization, FinancialService, Website, WebPage, CollectionPage, ItemList,
+  WebApplication, Service, FAQ and Breadcrumb schema
 - XML sitemap generated at /sitemap.xml
 - robots.txt generated at /robots.txt
 - RSS feed generated at /rss.xml
 - Web app manifest generated at /manifest.webmanifest
-- Keyword clusters linked from home, services, blogs and footer
+- 5+ contextual internal links from every guide to its pillar, service, tool,
+  methodology and related research
+- Optional GA4 conversion and Core Web Vitals tracking
+- Deferred/cached market feed and mobile rendering optimisations
 - Responsive desktop, tablet and mobile UI
+
+New official Telegram channel
+-----------------------------
+https://t.me/tradefirmindia
+
+Optional Vercel environment variables
+--------------------------------------
+NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+GOOGLE_SITE_VERIFICATION=your_google_verification_token
 
 Official contact details used
 -----------------------------
@@ -67,6 +82,8 @@ Important
 - RA/IA registration details were intentionally not added, as requested.
 - Add exact office street addresses only after they are confirmed.
 - The existing /api/leads CRM/Telegram pipeline was preserved.
+- Public Telegram links now open https://t.me/tradefirmindia.
+- Bot lead notifications still require TELEGRAM_CHAT_ID for the new destination.
 - Do not publish fabricated licence, address, performance or review information.
 - Ranking cannot be guaranteed. Google controls crawling, indexing and ranking.
 
@@ -74,5 +91,7 @@ After deployment
 ----------------
 1. Open https://www.tradefirm.in/sitemap.xml and confirm all URLs load.
 2. Submit sitemap.xml in Google Search Console once.
-3. Inspect the six primary SEO service URLs and request indexing where required.
+3. Inspect the home page, research library and six priority service URLs. Request
+   indexing only when required; do not repeatedly submit unchanged URLs.
 4. Follow SEO-90-DAY-OPERATIONS.md for the recurring work Google evaluates over time.
+5. Follow SEO-MAX-BACKLINK-PLAYBOOK.md for genuine off-site authority work.

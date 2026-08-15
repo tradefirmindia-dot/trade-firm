@@ -1,0 +1,36 @@
+TRADE FIRM V10.0.0 — SEO MAX RELEASE
+=====================================
+
+Website changes
+---------------
+- Approved v9 visual design and official TRADE FIRM logo retained.
+- Official public Telegram channel changed to https://t.me/tradefirmindia.
+- Homepage entity language strengthened for “TRADE FIRM Research Advisory”.
+- Research library expanded from 27 to 60 original expert guides.
+- Eight substantial research-pillar pages added with distinct search intent.
+- Three free calculators available under /tools.
+- Every guide now links to its pillar, service, calculator, methodology and five
+  related guides.
+- BlogPosting, CollectionPage, ItemList, WebApplication, WebPage and enhanced
+  organization structured data added.
+- Per-article publication/update dates added to the sitemap.
+- Optional GA4 lead, Telegram, phone, email, CTA and Core Web Vitals events added.
+- Market ticker fetch delayed from initial rendering, refresh reduced to two
+  minutes, hidden-tab calls paused and third-party feed timeout reduced.
+- Stable logo dimensions, mobile rendering reductions, response compression,
+  long-lived brand-asset caching and security headers added.
+
+Operational work that remains external
+--------------------------------------
+- Add the GA4 Measurement ID and Search Console verification token in Vercel.
+- Update TELEGRAM_CHAT_ID if website-lead bot alerts should enter a new channel.
+- Earn genuine referring domains through the included backlink playbook.
+- Publish original dated market reports regularly; evergreen guides are not a
+  replacement for an active research desk.
+- Measure Search Console and GA4 trends across 28-day periods.
+
+No ranking guarantee
+--------------------
+This release creates a stronger technical, content, internal-link and measurement
+foundation. Search engines control crawling, indexing and ranking, while genuine
+authority and demand must be earned over time.

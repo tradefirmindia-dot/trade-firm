@@ -1,19 +1,53 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, Clock3, FileText } from "lucide-react";
 import PageIntro from "../../components/PageIntro";
+import { contentClusters, getPostsForCluster } from "../../lib/content-clusters";
 import { blogPosts } from "../../lib/site-content";
+import { siteIdentity } from "../../lib/site-identity";
 
 export const metadata = {
-  title: "Stock Market Advisory & Research Insights India",
-  description: "Read professional Trade Firm insights on stock market advisory, NIFTY and BANK NIFTY, options, futures, equity research, IPOs and risk management.",
+  title: "60 Stock Market Research & Advisory Guides India",
+  description: "Read 60 TRADE FIRM expert guides across stock market advisory, NIFTY, BANK NIFTY, options, futures, equity research, IPOs and risk management.",
   alternates: { canonical: "https://www.tradefirm.in/blogs" },
 };
 
 export default function BlogsPage() {
   const [featured, ...posts] = blogPosts;
+  const url = `${siteIdentity.url}/blogs`;
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${url}#collection`,
+        url,
+        name: "TRADE FIRM Stock Market Research and Advisory Guides",
+        description: "A 60-guide Indian stock market research and risk-management library.",
+        isPartOf: { "@id": `${siteIdentity.url}/#website` },
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: blogPosts.length,
+          itemListElement: blogPosts.map((post, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: post.title,
+            url: `${siteIdentity.url}/blogs/${post.slug}`,
+          })),
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: siteIdentity.url },
+          { "@type": "ListItem", position: 2, name: "Blogs", item: url },
+        ],
+      },
+    ],
+  };
 
   return (
     <main className="inner-page">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <PageIntro
         eyebrow="TRADE FIRM INSIGHTS"
         title="Advisory insight for"
@@ -30,7 +64,20 @@ export default function BlogsPage() {
         </div>
       </PageIntro>
 
-      <section className="section shell inner-section-first">
+      <section className="section shell research-cluster-strip">
+        <div className="section-head split-head"><div><span>8 RESEARCH PILLARS</span><h2>Browse by decision, product or risk question.</h2></div><p>Topic hubs connect every guide with relevant service pages and free calculators.</p></div>
+        <div className="cluster-chip-grid">
+          {contentClusters.map((cluster) => (
+            <Link href={`/research-library/${cluster.slug}`} key={cluster.slug}>
+              <span>{getPostsForCluster(blogPosts, cluster.slug).length} guides</span>
+              <b>{cluster.name}</b>
+              <ArrowRight size={15} />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="section shell blog-library-list">
         <Link className="featured-blog" href={`/blogs/${featured.slug}`}>
           <div className="featured-blog-visual"><FileText size={32} /><span>FEATURED MARKET INSIGHT</span><b>01</b></div>
           <div className="featured-blog-copy"><span>{featured.category}</span><h2>{featured.title}</h2><p>{featured.excerpt}</p><div><small><Clock3 size={14} /> {featured.readTime}</small><b>Read insight <ArrowRight size={16} /></b></div></div>

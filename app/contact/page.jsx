@@ -32,9 +32,9 @@ export default function ContactPage() {
         <div className="contact-hero-card">
           <span>TRADE FIRM</span>
           <h3>Advisory &amp; Research Desk</h3>
-          <a href={`tel:${siteIdentity.phoneHref}`}><Phone size={18} /> {siteIdentity.phoneDisplay}</a>
-          <a href={`mailto:${siteIdentity.email}`}><Mail size={18} /> {siteIdentity.email}</a>
-          <a href={siteIdentity.socials.telegram} target="_blank" rel="noopener noreferrer"><Send size={18} /> Official Telegram</a>
+          <a href={`tel:${siteIdentity.phoneHref}`} data-analytics-event="phone_click"><Phone size={18} /> {siteIdentity.phoneDisplay}</a>
+          <a href={`mailto:${siteIdentity.email}`} data-analytics-event="email_click"><Mail size={18} /> {siteIdentity.email}</a>
+          <a href={siteIdentity.socials.telegram} target="_blank" rel="noopener noreferrer" data-analytics-event="telegram_click"><Send size={18} /> Official Telegram</a>
         </div>
       </PageIntro>
 

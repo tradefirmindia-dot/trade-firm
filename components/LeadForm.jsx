@@ -79,6 +79,11 @@ export default function LeadForm({ compact = false }) {
 
       setStatus("Enquiry received. The Trade Firm advisory and research desk will contact you shortly.");
       setStatusType("success");
+      window.gtag?.("event", "generate_lead", {
+        lead_source: "website",
+        service_interest: form.segment,
+        transport_type: "beacon",
+      });
       setForm({ ...initialForm, startedAt: Date.now() });
     } catch (error) {
       setStatus(error.message || "Could not submit right now. Please try again.");

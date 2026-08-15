@@ -7,7 +7,7 @@ export default function SiteFooter() {
     <footer className="premium-footer">
       <div className="shell footer-grid">
         <div className="footer-brand">
-          <img src="/tf-brand-mark.svg" alt="Trade Firm official brand mark" />
+          <img src="/tf-brand-mark.svg" alt="Trade Firm official brand mark" width="52" height="52" />
           <div>
             <strong>TRADE FIRM</strong>
             <span>TRADE • ANALYZE • GROW</span>
@@ -27,7 +27,10 @@ export default function SiteFooter() {
         <div className="footer-column">
           <b>Research Resources</b>
           <Link href="/research-services">All Services</Link>
+          <Link href="/research-library">Research Library</Link>
           <Link href="/tools/risk-planner">Risk Planner</Link>
+          <Link href="/tools/risk-reward-calculator">Risk–Reward Calculator</Link>
+          <Link href="/tools/drawdown-recovery-calculator">Drawdown Calculator</Link>
           <Link href="/sample-research-report">Sample Research Format</Link>
           <Link href="/research-methodology">Research Methodology</Link>
           <Link href="/authors/trade-firm-research-desk">Research Desk</Link>
@@ -36,11 +39,11 @@ export default function SiteFooter() {
         </div>
         <div className="footer-column">
           <b>Contact</b>
-          <a href={`tel:${siteIdentity.phoneHref}`}><Phone size={16} /> {siteIdentity.phoneDisplay}</a>
-          <a href={`mailto:${siteIdentity.email}`}><Mail size={16} /> {siteIdentity.email}</a>
+          <a href={`tel:${siteIdentity.phoneHref}`} data-analytics-event="phone_click"><Phone size={16} /> {siteIdentity.phoneDisplay}</a>
+          <a href={`mailto:${siteIdentity.email}`} data-analytics-event="email_click"><Mail size={16} /> {siteIdentity.email}</a>
           <span><MapPin size={16} /> Thane, Maharashtra</span>
           <span><MapPin size={16} /> Navi Mumbai, Maharashtra</span>
-          <a href={siteIdentity.socials.telegram} target="_blank" rel="noopener noreferrer"><Send size={16} /> Telegram</a>
+          <a href={siteIdentity.socials.telegram} target="_blank" rel="noopener noreferrer" data-analytics-event="telegram_click"><Send size={16} /> Telegram</a>
           <a href={siteIdentity.socials.instagram} target="_blank" rel="noopener noreferrer"><Instagram size={16} /> Instagram</a>
           <Link href="/contact">Contact &amp; callback</Link>
         </div>
