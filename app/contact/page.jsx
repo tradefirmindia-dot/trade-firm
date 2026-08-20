@@ -4,7 +4,7 @@ import PageIntro from "../../components/PageIntro";
 import { siteIdentity } from "../../lib/site-identity";
 
 export const metadata = {
-  title: "Contact Trade Firm | Thane & Navi Mumbai",
+  title: "Contact Our Research Desk | Thane & Navi Mumbai",
   description: "Contact Trade Firm's advisory and research desk by phone or email. Main branch in Thane and second branch in Navi Mumbai, Maharashtra.",
   alternates: { canonical: `${siteIdentity.url}/contact` },
 };

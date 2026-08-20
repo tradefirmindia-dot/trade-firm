@@ -5,7 +5,7 @@ import { blogPosts } from "../../../lib/site-content";
 import { siteIdentity } from "../../../lib/site-identity";
 
 export const metadata = {
-  title: "Trade Firm Research Desk | Author & Editorial Profile",
+  title: "Research Desk Author & Editorial Profile",
   description: "Meet the Trade Firm Research Desk and review its Indian market coverage, research methodology, editorial standards and published insights.",
   alternates: { canonical: `${siteIdentity.url}/authors/trade-firm-research-desk` },
 };

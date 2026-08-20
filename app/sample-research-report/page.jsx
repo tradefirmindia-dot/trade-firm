@@ -4,7 +4,7 @@ import PageIntro from "../../components/PageIntro";
 import { siteIdentity } from "../../lib/site-identity";
 
 export const metadata = {
-  title: "Sample Stock Market Research Format | Trade Firm",
+  title: "Sample Stock Market Research Format",
   description: "Review an illustrative Trade Firm research-report structure covering context, evidence, scenarios, invalidation, risk and post-market review.",
   alternates: { canonical: `${siteIdentity.url}/sample-research-report` },
 };
