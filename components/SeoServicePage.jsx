@@ -8,6 +8,7 @@ const icons = [FileSearch, BarChart3, Layers3, ShieldCheck];
 
 export default function SeoServicePage({ page }) {
   const url = `${siteUrl}/${page.slug}`;
+  const updated = page.updated || contentUpdatedAt;
   const relatedPosts = page.relatedBlogs
     .map((slug) => blogPosts.find((post) => post.slug === slug))
     .filter(Boolean);
@@ -21,7 +22,7 @@ export default function SeoServicePage({ page }) {
         url,
         name: page.metaTitle,
         description: page.metaDescription,
-        dateModified: contentUpdatedAt,
+        dateModified: updated,
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@id": `${url}#service` },
         breadcrumb: { "@id": `${url}#breadcrumb` },
@@ -102,6 +103,14 @@ export default function SeoServicePage({ page }) {
               <article key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.text}</p></article>
             ))}
           </div>
+          {page.priorityLinks?.length > 0 && (
+            <div className="seo-topic-paths">
+              <div><span>RELATED RESEARCH PATHS</span><p>Continue with the service, guide or tool that matches your next market decision.</p></div>
+              <nav className="identity-actions" aria-label="Related research paths">
+                {page.priorityLinks.map((link) => <Link href={link.href} key={link.href}>{link.label} <ArrowRight size={15} /></Link>)}
+              </nav>
+            </div>
+          )}
         </div>
       </section>
 

@@ -60,7 +60,17 @@ export default function AboutUsPage() {
       </section>
 
       <section className="section shell about-coverage-section">
-        <div className="about-coverage-copy"><span>WHAT WE ADVISE &amp; RESEARCH</span><h2>From Indian index derivatives to equity and IPO research.</h2><p>Coverage is organised around the markets followed by active Indian participants, with primary focus on options and intraday traders.</p><Link href="/research-services" className="primary-btn">Explore advisory &amp; research <ArrowRight size={17} /></Link></div>
+        <div className="about-coverage-copy">
+          <span>WHAT WE ADVISE &amp; RESEARCH</span>
+          <h2>From Indian index derivatives to equity and IPO research.</h2>
+          <p>Coverage is organised around the markets followed by active Indian participants, with primary focus on options and intraday traders.</p>
+          <Link href="/research-services" className="primary-btn">Explore advisory &amp; research <ArrowRight size={17} /></Link>
+          <nav className="identity-actions" aria-label="Explore core Trade Firm services">
+            <Link href="/stock-market-advisory-india">Stock Market Advisory India <ArrowRight size={16} /></Link>
+            <Link href="/ipo-research">IPO Research India <ArrowRight size={16} /></Link>
+            <Link href="/blogs/intraday-stock-market-advisory-checklist">Intraday advisory checklist <ArrowRight size={16} /></Link>
+          </nav>
+        </div>
         <div className="about-coverage-list">
           {[
               ["01", "Index advisory", "Structured views across NIFTY 50, BANK NIFTY, FINNIFTY, MIDCPNIFTY, SENSEX, BANKEX and broader benchmarks."],

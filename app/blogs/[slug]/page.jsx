@@ -110,8 +110,8 @@ export default async function BlogPostPage({ params }) {
         <p className="article-lead">{post.excerpt}</p>
         <div className="article-trustline">
           <span>By <Link href="/authors/trade-firm-research-desk">Trade Firm Research Desk</Link></span>
-          <span>Published {new Date(published).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</span>
-          <span>Reviewed {new Date(updated).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}</span>
+          <span>Published {new Date(published).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</span>
+          <span>Reviewed {new Date(updated).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" })}</span>
         </div>
         <div className="article-divider"><i /></div>
 
