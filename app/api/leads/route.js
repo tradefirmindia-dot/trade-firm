@@ -41,7 +41,7 @@ const allowedExperiences = new Set([
   "3+ years",
 ]);
 
-const allowedSources = new Set(["Website", "TRADE FIRM FX"]);
+const allowedSources = new Set(["Website", "TRADE FIRM FX", "TRADE FIRM DHAN"]);
 
 const crmSegment = {
   "Option Trading": "Options",
