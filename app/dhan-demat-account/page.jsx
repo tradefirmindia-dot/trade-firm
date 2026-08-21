@@ -22,7 +22,7 @@ const referralUrl = "https://join.dhan.co/?invite=IMICH83286";
 const pageUrl = "https://www.tradefirm.in/dhan-demat-account";
 
 export const metadata = {
-  title: "Open Dhan Demat Account Online | TRADE FIRM",
+  title: "Open Dhan Demat Account Online",
   description:
     "Open a Dhan Demat and trading account online through the TRADE FIRM referral route. Access Indian stocks, F&O, ETFs, mutual funds and IPOs.",
   keywords: [
