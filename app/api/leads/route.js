@@ -6,6 +6,10 @@ const allowedFunds = new Set([
   "₹1,00,000 - ₹3,00,000",
   "₹3,00,000 - ₹5,00,000",
   "Above ₹5,00,000",
+  "Exploring",
+  "Under ₹25,000",
+  "₹25,000–₹1,00,000",
+  "₹1,00,000+",
 ]);
 
 const allowedSegments = new Set([
@@ -18,6 +22,10 @@ const allowedSegments = new Set([
   "Swing Trading",
   "IPO Research",
   "All Segments",
+  "Forex",
+  "Metals",
+  "Global Indices",
+  "Multiple Markets",
 ]);
 
 const allowedTimes = new Set([
@@ -25,6 +33,15 @@ const allowedTimes = new Set([
   "12:00 PM - 03:30 PM",
   "04:00 PM - 07:00 PM",
 ]);
+
+const allowedExperiences = new Set([
+  "New to markets",
+  "Under 1 year",
+  "1–3 years",
+  "3+ years",
+]);
+
+const allowedSources = new Set(["Website", "TRADE FIRM FX"]);
 
 const crmSegment = {
   "Option Trading": "Options",
@@ -36,6 +53,22 @@ const crmSegment = {
   "Swing Trading": "Swing",
   "IPO Research": "IPO",
   "All Segments": "All Segments",
+  Forex: "Forex",
+  Metals: "Metals",
+  "Global Indices": "Global Indices",
+  "Multiple Markets": "Multiple Markets",
+};
+
+const crmCapital = {
+  "Below ₹50,000": 50000,
+  "₹50,000 - ₹1,00,000": 100000,
+  "₹1,00,000 - ₹3,00,000": 300000,
+  "₹3,00,000 - ₹5,00,000": 500000,
+  "Above ₹5,00,000": 500000,
+  Exploring: 0,
+  "Under ₹25,000": 25000,
+  "₹25,000–₹1,00,000": 100000,
+  "₹1,00,000+": 100000,
 };
 
 function clean(value, maxLength = 120) {
@@ -66,7 +99,17 @@ function isRateLimited(request) {
   return false;
 }
 
-async function syncLeadToCrm({ name, phone, fund, segment, preferredTime, indiaTime }) {
+async function syncLeadToCrm({
+  name,
+  phone,
+  email,
+  fund,
+  segment,
+  experience,
+  preferredTime,
+  source,
+  indiaTime,
+}) {
   const supabaseUrl = clean(
     process.env.CRM_SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL,
     300
@@ -104,7 +147,14 @@ async function syncLeadToCrm({ name, phone, fund, segment, preferredTime, indiaT
   }
 
   const existingLeads = await existingResponse.json();
-  const detailLine = `Website enquiry · Fund: ${fund} · Preferred callback: ${preferredTime} · ${indiaTime}`;
+  const detailLine = [
+    `${source} enquiry`,
+    `Fund: ${fund}`,
+    email ? `Email: ${email}` : "",
+    experience ? `Experience: ${experience}` : "",
+    `Preferred callback: ${preferredTime}`,
+    `Submitted: ${indiaTime}`,
+  ].filter(Boolean).join(" · ");
 
   if (existingLeads[0]?.id) {
     const existing = existingLeads[0];
@@ -134,10 +184,10 @@ async function syncLeadToCrm({ name, phone, fund, segment, preferredTime, indiaT
     body: JSON.stringify({
       name,
       phone,
-      capital: 0,
+      capital: crmCapital[fund] || 0,
       segment: crmSegment[segment] || segment,
       status: "Not Contacted",
-      source: "Website",
+      source,
       notes: detailLine,
       consent_recorded: true,
     }),
@@ -196,9 +246,13 @@ export async function POST(request) {
     const body = await request.json();
     const name = clean(body.name, 80);
     const phone = clean(body.phone, 10);
+    const email = clean(body.email, 160).toLowerCase();
     const fund = clean(body.fund, 60);
     const segment = clean(body.segment, 60);
+    const experience = clean(body.experience, 60);
     const preferredTime = clean(body.preferredTime, 60);
+    const requestedSource = clean(body.source, 60);
+    const source = allowedSources.has(requestedSource) ? requestedSource : "Website";
     const honeypot = clean(body.company, 100);
     const startedAt = Number(body.startedAt || 0);
 
@@ -218,6 +272,14 @@ export async function POST(request) {
       return NextResponse.json({ error: "Please select valid enquiry details." }, { status: 400 });
     }
 
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+    }
+
+    if (experience && !allowedExperiences.has(experience)) {
+      return NextResponse.json({ error: "Please select valid trading experience." }, { status: 400 });
+    }
+
     if (body.consent !== true) {
       return NextResponse.json({ error: "Contact consent is required." }, { status: 400 });
     }
@@ -232,7 +294,17 @@ export async function POST(request) {
     let telegram = { configured: false, sent: false };
 
     try {
-      crm = await syncLeadToCrm({ name, phone, fund, segment, preferredTime, indiaTime });
+      crm = await syncLeadToCrm({
+        name,
+        phone,
+        email,
+        fund,
+        segment,
+        experience,
+        preferredTime,
+        source,
+        indiaTime,
+      });
     } catch (error) {
       console.error("CRM lead sync error:", error.message);
     }
