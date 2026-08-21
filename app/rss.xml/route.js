@@ -21,7 +21,7 @@ export function GET() {
     <channel>
       <title>Trade Firm Research Desk</title>
       <link>${siteIdentity.url}/blogs</link>
-      <description>Indian stock market advisory, research and risk-management insights.</description>
+      <description>Indian market research, Dhan account, Forex, MT5, advisory and risk-management insights.</description>
       <language>en-IN</language>
       <lastBuildDate>${new Date(contentDates.modified).toUTCString()}</lastBuildDate>
       ${items}
