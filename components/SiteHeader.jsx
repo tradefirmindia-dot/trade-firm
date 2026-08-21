@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  const servicePaths = ["/research-services", "/forex-broker-india", "/stock-market-advisory-india", "/stock-market-research-india", "/nifty-bank-nifty-advisory", "/options-derivatives-research", "/equity-research", "/ipo-research"];
+  const servicePaths = ["/research-services", "/forex-broker-india", "/dhan-demat-account", "/stock-market-advisory-india", "/stock-market-research-india", "/nifty-bank-nifty-advisory", "/options-derivatives-research", "/equity-research", "/ipo-research"];
   const servicesActive = servicePaths.some((path) => active(path));
 
   useEffect(() => {
@@ -59,6 +59,7 @@ export default function SiteHeader() {
           <div className="nav-dropdown-panel services-dropdown-panel">
             <Link href="/research-services"><small>OVERVIEW</small><b>All Services</b></Link>
             <Link href="/forex-broker-india"><small>GLOBAL MARKETS</small><b>Forex &amp; MT5 Access</b></Link>
+            <Link href="/dhan-demat-account"><small>INDIAN BROKER</small><b>Dhan Demat Account</b></Link>
             <Link href="/stock-market-advisory-india"><small>INDIA</small><b>Stock Market Advisory</b></Link>
             <Link href="/stock-market-research-india"><small>RESEARCH</small><b>Market Research</b></Link>
             <Link href="/nifty-bank-nifty-advisory"><small>INDICES</small><b>NIFTY &amp; BANK NIFTY</b></Link>
@@ -79,6 +80,7 @@ export default function SiteHeader() {
         <Link href="/#tenx">10X THINK</Link>
         <Link className={active("/blogs") || active("/research-library") ? "active" : ""} href="/blogs">Blogs</Link>
         <Link className={active("/about-us") ? "active" : ""} href="/about-us">About Us</Link>
+        <Link className={`india-account-link ${active("/dhan-demat-account") ? "active" : ""}`} href="/dhan-demat-account">Open Dhan Trading Account <ArrowRight size={15} /></Link>
         <Link className={`forex-account-link ${active("/forex-broker-india") ? "active" : ""}`} href="/forex-broker-india">Open Forex Trading Account <ArrowRight size={15} /></Link>
         <Link href="/contact" className="nav-cta">Speak to our desk <ArrowRight size={15} /></Link>
       </nav>
