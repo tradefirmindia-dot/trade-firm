@@ -124,6 +124,8 @@ const schema = {
       url: pageUrl,
       name: "Forex Broker India: MT5, UPI & Bank Transfer",
       description: "Forex broker account access, MT5 onboarding, global market research and account-funding information for Indian traders.",
+      datePublished: "2026-08-21",
+      dateModified: "2026-08-21",
       inLanguage: "en-IN",
       isPartOf: { "@id": "https://www.tradefirm.in/#website" },
       about: { "@id": "https://www.tradefirm.in/#organization" },
@@ -161,7 +163,7 @@ const schema = {
 
 function ExternalCta({ children, className = styles.primaryButton }) {
   return (
-    <a className={className} href={referralUrl} target="_blank" rel="noopener noreferrer" data-analytics-event="fx_account_open">
+    <a className={className} href={referralUrl} target="_blank" rel="sponsored noopener noreferrer" data-analytics-event="fx_account_open">
       {children} <ArrowRight size={17} />
     </a>
   );
@@ -211,7 +213,7 @@ export default function ForexBrokerIndiaPage() {
                 </div>
                 <div className={styles.quoteList}>
                   {["XAU / USD", "EUR / USD", "GBP / USD"].map((symbol, index) => (
-                    <a href={referralUrl} target="_blank" rel="noopener noreferrer" key={symbol}>
+                    <a href={referralUrl} target="_blank" rel="sponsored noopener noreferrer" key={symbol}>
                       <span>{["G", "E", "P"][index]}</span>
                       <div><strong>{symbol}</strong><small>{["Gold", "Euro", "Pound"][index]}</small></div>
                       <b>{index === 0 ? "METALS" : "FOREX"}</b><ArrowRight size={16} />
