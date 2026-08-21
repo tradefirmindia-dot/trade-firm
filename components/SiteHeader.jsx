@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
-  const servicePaths = ["/research-services", "/stock-market-advisory-india", "/stock-market-research-india", "/nifty-bank-nifty-advisory", "/options-derivatives-research", "/equity-research", "/ipo-research"];
+  const servicePaths = ["/research-services", "/forex-broker-india", "/stock-market-advisory-india", "/stock-market-research-india", "/nifty-bank-nifty-advisory", "/options-derivatives-research", "/equity-research", "/ipo-research"];
   const servicesActive = servicePaths.some((path) => active(path));
 
   useEffect(() => {
@@ -58,6 +58,7 @@ export default function SiteHeader() {
           <summary>Advisory &amp; Research <ChevronDown size={15} /></summary>
           <div className="nav-dropdown-panel services-dropdown-panel">
             <Link href="/research-services"><small>OVERVIEW</small><b>All Services</b></Link>
+            <Link href="/forex-broker-india"><small>GLOBAL MARKETS</small><b>Forex &amp; MT5 Access</b></Link>
             <Link href="/stock-market-advisory-india"><small>INDIA</small><b>Stock Market Advisory</b></Link>
             <Link href="/stock-market-research-india"><small>RESEARCH</small><b>Market Research</b></Link>
             <Link href="/nifty-bank-nifty-advisory"><small>INDICES</small><b>NIFTY &amp; BANK NIFTY</b></Link>
