@@ -134,7 +134,7 @@ export default function Home() {
           </div>
 
           <div className="hero-proof">
-            <div><strong>08+</strong><span>Years of Indian market experience</span></div>
+            <div><strong>2015</strong><span>TRADE FIRM market journey began</span></div>
             <div><strong>NSE + BSE</strong><span>Advisory and research coverage</span></div>
             <div><strong>1:1–1:10</strong><span>Defined risk–reward planning</span></div>
           </div>
@@ -303,7 +303,7 @@ export default function Home() {
       <section className="section shell about-preview">
         <div className="about-preview-mark"><TrendingUp size={32} /><span>TRADE FIRM</span></div>
         <div><span>ABOUT THE FIRM</span><h2>Built from market experience. Structured for responsible guidance.</h2></div>
-        <div><p>Trade Firm is an Indian stock market advisory and research firm focused on indices, derivatives, equities, IPOs and risk-first decision frameworks.</p><Link href="/about-us">Why Trade Firm <ArrowRight size={16} /></Link><Link href="/trust-centre">Trust Centre <ArrowRight size={16} /></Link></div>
+        <div><p>Trade Firm is an Indian stock market advisory and research firm whose market journey began in 2015, focused on indices, derivatives, equities, IPOs and risk-first decision frameworks.</p><Link href="/about-us">Why Trade Firm <ArrowRight size={16} /></Link><Link href="/trust-centre">Trust Centre <ArrowRight size={16} /></Link></div>
       </section>
 
       <section className="section shell" id="faq">

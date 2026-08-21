@@ -122,6 +122,7 @@ const schema = {
       name: siteIdentity.name,
       legalName: siteIdentity.legalName,
       alternateName: siteIdentity.alternateName,
+      foundingDate: siteIdentity.foundingDate,
       url: siteIdentity.url,
       logo: { "@type": "ImageObject", url: `${siteIdentity.url}/icon.png` },
       image: `${siteIdentity.url}/og-image.jpg`,

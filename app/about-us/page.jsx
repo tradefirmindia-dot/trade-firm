@@ -5,7 +5,7 @@ import { siteIdentity } from "../../lib/site-identity";
 
 export const metadata = {
   title: "About Our Stock Market Advisory & Research Firm",
-  description: "Learn about Trade Firm, an Indian stock market advisory and research firm built around market experience, structured analysis and defined-risk principles.",
+  description: "Learn about Trade Firm, an Indian stock market advisory and research firm whose market journey began in 2015, built around structured analysis and defined-risk principles.",
   alternates: { canonical: "https://www.tradefirm.in/about-us" },
 };
 
@@ -16,12 +16,12 @@ export default function AboutUsPage() {
         eyebrow="ABOUT TRADE FIRM"
         title="Market experience, transformed into"
         accent="professional guidance."
-        text="Trade Firm is an Indian stock market advisory and research firm focused on price action, derivatives, equities, IPO analysis and clearly communicated risk."
+        text="Trade Firm’s market journey began in 2015. Today, the firm focuses on price action, derivatives, equities, IPO analysis and clearly communicated risk."
       >
         <div className="about-hero-panel">
           <span>TRADE FIRM</span>
           <strong>TRADE • ANALYZE • GROW</strong>
-          <div><b>08+</b><p>Years of hands-on Indian market experience</p></div>
+          <div><b>2015</b><p>The TRADE FIRM market journey began</p></div>
         </div>
       </PageIntro>
 
@@ -29,7 +29,7 @@ export default function AboutUsPage() {
         <div className="about-story-mark"><TrendingUp size={33} /><span>ADVISORY<br />&amp; RESEARCH</span></div>
         <div><span>OUR STORY</span><h2>An advisory and research firm for serious market participants.</h2></div>
         <div>
-          <p>Trade Firm was shaped by years of practical experience across Indian indices, options, futures and equities. Our purpose is straightforward: replace noise, vague calls and exaggerated claims with structured analysis, transparent scenarios and visible risk.</p>
+          <p>The TRADE FIRM market journey began in 2015 with hands-on market study and the development of a disciplined approach to Indian indices, options, futures and equities. Over time, that foundation evolved into a professional research and advisory process. Our purpose is straightforward: replace noise, vague calls and exaggerated claims with structured analysis, transparent scenarios and visible risk.</p>
           <p>Our advisory language connects pre-market preparation, active-session context and post-market review. The 10X THINK framework and Risk Planner support the same philosophy—understand the research rationale, define invalidation and make risk measurable before execution.</p>
         </div>
       </section>

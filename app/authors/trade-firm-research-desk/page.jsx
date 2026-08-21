@@ -25,7 +25,7 @@ export default function ResearchDeskAuthorPage() {
     <main className="inner-page author-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <PageIntro eyebrow="AUTHOR & EDITORIAL PROFILE" title="Trade Firm" accent="Research Desk." text="The Trade Firm Research Desk publishes process-led Indian market education and research across indices, derivatives, equities, IPOs and risk management.">
-        <div className="author-hero-card"><FileSearch size={31} /><span>RESEARCH COVERAGE</span><strong>08+ YEARS</strong><p>Hands-on Indian market experience reflected through structured, risk-aware content.</p></div>
+        <div className="author-hero-card"><FileSearch size={31} /><span>RESEARCH COVERAGE</span><strong>SINCE 2015</strong><p>A market journey built through hands-on study and reflected in structured, risk-aware content.</p></div>
       </PageIntro>
 
       <section className="section shell inner-section-first author-grid">
