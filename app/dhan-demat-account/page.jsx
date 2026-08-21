@@ -192,6 +192,8 @@ const schema = {
       url: pageUrl,
       name: "Open Dhan Demat Account Online",
       description: "Dhan Demat and trading account opening information, digital KYC guidance and Indian market research access.",
+      datePublished: "2026-08-21",
+      dateModified: "2026-08-21",
       inLanguage: "en-IN",
       isPartOf: { "@id": "https://www.tradefirm.in/#website" },
       about: { "@id": "https://www.tradefirm.in/#organization" },
