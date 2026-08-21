@@ -300,6 +300,21 @@ export default function ForexBrokerIndiaPage() {
         </div>
       </section>
 
+      <section className={[styles.section, styles.guideSection].join(" ")} id="fx-guides">
+        <div className={styles.fxShell}>
+          <div className={styles.sectionHead}>
+            <div><span>FOREX &amp; MT5 RESOURCE HUB</span><h2>Verification guides before registration or funding.</h2></div>
+            <p>Understand the account entity, Indian regulatory checks, MT5 specifications, payment routes and XAUUSD risk before proceeding.</p>
+          </div>
+          <div className={styles.guideGrid}>
+            <article><MonitorSmartphone size={22} /><h3>Open an MT5 account</h3><p>Separate the MT5 software from the broker account and follow a verification-first registration process.</p><a className={styles.cardLink} href="/blogs/how-to-open-mt5-forex-account-india">Read MT5 account guide <ArrowRight size={15} /></a></article>
+            <article><SearchCheck size={22} /><h3>Forex broker checklist</h3><p>Review authorisation, legal entity, products, costs, execution, support and the complete withdrawal path.</p><a className={styles.cardLink} href="/blogs/forex-broker-india-verification-checklist">Read broker checklist <ArrowRight size={15} /></a></article>
+            <article><WalletCards size={22} /><h3>UPI &amp; bank-transfer safety</h3><p>Payment convenience is not regulatory proof. Verify the beneficiary, currency, fees and withdrawal route.</p><a className={styles.cardLink} href="/blogs/upi-bank-transfer-forex-account-india">Read funding guide <ArrowRight size={15} /></a></article>
+            <article><Coins size={22} /><h3>MT5 gold &amp; XAUUSD risk</h3><p>Inspect contract size, tick value, margin, spread, sessions and holding cost before selecting quantity.</p><a className={styles.cardLink} href="/blogs/mt5-forex-gold-xauusd-guide-india">Read XAUUSD guide <ArrowRight size={15} /></a></article>
+          </div>
+        </div>
+      </section>
+
       <section className={`${styles.section} ${styles.processSection}`} id="fx-process">
         <div className={styles.fxShell}>
           <div className={styles.processLayout}>
