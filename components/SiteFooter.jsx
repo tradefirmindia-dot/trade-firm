@@ -17,6 +17,7 @@ export default function SiteFooter() {
 
         <div className="footer-column">
           <b>Advisory &amp; Research</b>
+          <Link href="/dhan-demat-account">Dhan Demat Account India</Link>
           <Link href="/forex-broker-india">Forex Broker &amp; MT5 India</Link>
           <Link href="/stock-market-advisory-india">Stock Market Advisory India</Link>
           <Link href="/stock-market-research-india">Stock Market Research India</Link>
