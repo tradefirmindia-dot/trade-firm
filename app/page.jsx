@@ -232,6 +232,27 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section shell account-access-section" aria-labelledby="account-access-title">
+        <div className="section-head split-head">
+          <div><span>TRADING ACCOUNT ACCESS</span><h2 id="account-access-title">Choose the market route you need.</h2></div>
+          <p>Separate account access from research decisions. Review the broker, product, pricing, funding and risk information before completing registration.</p>
+        </div>
+        <div className="blog-grid two-blog-grid">
+          <Link className="blog-card" href="/dhan-demat-account">
+            <div className="blog-card-top"><span>INDIAN STOCK MARKET</span><b>01</b></div>
+            <h3>Open a Dhan Demat &amp; Trading Account</h3>
+            <p>Explore the Dhan account journey for Indian stocks, F&amp;O, ETFs, mutual funds and IPOs, with KYC guidance and direct TRADE FIRM CRM support.</p>
+            <div className="blog-card-bottom"><small>Indian market account</small><ArrowRight size={18} /></div>
+          </Link>
+          <Link className="blog-card" href="/forex-broker-india">
+            <div className="blog-card-top"><span>GLOBAL MARKET ACCESS</span><b>02</b></div>
+            <h3>Explore Forex &amp; MT5 Account Access</h3>
+            <p>Review MT5 onboarding, forex and gold market access, account-level funding information and the verification checklist for Indian residents.</p>
+            <div className="blog-card-bottom"><small>Forex and MT5 account</small><ArrowRight size={18} /></div>
+          </Link>
+        </div>
+      </section>
+
       <section className="section tools-preview-section">
         <div className="shell tools-preview-grid">
           <div className="tools-preview-copy">
