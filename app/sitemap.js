@@ -9,6 +9,7 @@ export default function sitemap() {
     ["", "weekly", 1],
     ["/research-services", "weekly", 0.9],
     ["/forex-broker-india", "weekly", 0.95],
+    ["/dhan-demat-account", "weekly", 0.95],
     ["/tools", "monthly", 0.8],
     ["/tools/risk-planner", "monthly", 0.9],
     ["/tools/risk-reward-calculator", "monthly", 0.9],
