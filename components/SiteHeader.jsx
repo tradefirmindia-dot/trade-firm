@@ -79,6 +79,7 @@ export default function SiteHeader() {
         <Link href="/#tenx">10X THINK</Link>
         <Link className={active("/blogs") || active("/research-library") ? "active" : ""} href="/blogs">Blogs</Link>
         <Link className={active("/about-us") ? "active" : ""} href="/about-us">About Us</Link>
+        <Link className={`forex-account-link ${active("/forex-broker-india") ? "active" : ""}`} href="/forex-broker-india">Open Forex Trading Account <ArrowRight size={15} /></Link>
         <Link href="/contact" className="nav-cta">Speak to our desk <ArrowRight size={15} /></Link>
       </nav>
     </header>
