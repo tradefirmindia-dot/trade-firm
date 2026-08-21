@@ -31,6 +31,10 @@ export const metadata = {
   },
   keywords: [
     "Trade Firm",
+    "Dhan Demat account",
+    "Dhan account opening",
+    "forex broker India",
+    "MT5 account India",
     "stock market research India",
     "NIFTY research",
     "BANK NIFTY analysis",
@@ -143,13 +147,15 @@ const schema = {
           "Options and derivatives research",
           "Equity research",
           "IPO research",
+          "Dhan Demat account setup assistance",
+          "Forex and MT5 account research assistance",
         ].map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
       },
       location: [
         { "@type": "Place", name: "Trade Firm Main Branch", address: { "@type": "PostalAddress", addressLocality: siteIdentity.primaryBranch.locality, addressRegion: siteIdentity.primaryBranch.region, addressCountry: siteIdentity.primaryBranch.country } },
         { "@type": "Place", name: "Trade Firm Second Branch", address: { "@type": "PostalAddress", addressLocality: siteIdentity.secondaryBranch.locality, addressRegion: siteIdentity.secondaryBranch.region, addressCountry: siteIdentity.secondaryBranch.country } },
       ],
-      knowsAbout: ["Indian stock market advisory", "Stock market research", "NIFTY and BANK NIFTY", "Options and futures research", "Equity research", "IPO research", "Trading risk management"],
+      knowsAbout: ["Indian stock market advisory", "Stock market research", "NIFTY and BANK NIFTY", "Options and futures research", "Equity research", "IPO research", "Demat account onboarding", "Forex and MT5 verification", "Trading risk management"],
     },
     {
       "@type": "WebSite",
