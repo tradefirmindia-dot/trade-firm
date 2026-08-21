@@ -1,5 +1,9 @@
-TRADE FIRM SEO MAX WEBSITE — V10.0.0
+TRADE FIRM SEO MAX WEBSITE — V10.1.0
 =========================================
+
+Live production website
+-----------------------
+https://www.tradefirm.in
 
 Approved base
 -------------
@@ -21,8 +25,10 @@ Deploy
 ------
 Push the full project to the connected GitHub repository. Vercel can deploy it automatically after a successful build.
 
-Primary SEO service pages
--------------------------
+Primary SEO service and account pages
+-------------------------------------
+/dhan-demat-account
+/forex-broker-india
 /stock-market-advisory-india
 /stock-market-research-india
 /nifty-bank-nifty-advisory
@@ -45,8 +51,8 @@ Trust and authority pages
 
 Content and technical SEO
 -------------------------
-- 60 original evergreen research and advisory guides
-- 8 substantial research-pillar/topic-hub pages at /research-library
+- 69 original research, account, advisory and risk guides
+- 10 substantial research-pillar/topic-hub pages at /research-library
 - 3 free linkable calculators: Risk Planner, Risk–Reward and Drawdown Recovery
 - BlogPosting author, published/reviewed dates, topic, word-count and source schema
 - Organization, FinancialService, Website, WebPage, CollectionPage, ItemList,
@@ -91,7 +97,7 @@ After deployment
 ----------------
 1. Open https://www.tradefirm.in/sitemap.xml and confirm all URLs load.
 2. Submit sitemap.xml in Google Search Console once.
-3. Inspect the home page, research library and six priority service URLs. Request
+3. Inspect the home page, research library and priority service and account URLs. Request
    indexing only when required; do not repeatedly submit unchanged URLs.
 4. Follow SEO-90-DAY-OPERATIONS.md for the recurring work Google evaluates over time.
 5. Follow SEO-MAX-BACKLINK-PLAYBOOK.md for genuine off-site authority work.
