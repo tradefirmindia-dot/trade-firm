@@ -7,12 +7,12 @@ import { siteIdentity } from "../../lib/site-identity";
 
 export const metadata = {
   title: "Indian Stock Market Research Library",
-  description: "Explore eight TRADE FIRM research pillars, dated market notes and expert guides on advisory, Indian indices, derivatives, equities, IPOs and risk.",
+  description: "Explore connected TRADE FIRM research pillars and expert guides on advisory, Indian indices, derivatives, broker accounts, Forex, IPOs and risk.",
   keywords: ["stock market research library India", "TRADE FIRM research advisory", "Indian market education"],
   alternates: { canonical: `${siteIdentity.url}/research-library` },
   openGraph: {
     title: "Indian Stock Market Research Library | TRADE FIRM",
-    description: "Eight connected research pillars covering Indian market advisory, products, process and risk.",
+    description: "Connected research pillars covering Indian markets, account access, professional process and measurable risk.",
     url: `${siteIdentity.url}/research-library`,
     images: ["/og-image.jpg"],
   },
@@ -28,7 +28,7 @@ export default function ResearchLibraryPage() {
         "@id": `${url}#collection`,
         url,
         name: "TRADE FIRM Indian Stock Market Research Library",
-        description: `Eight topic pillars connecting ${blogPosts.length} Indian stock market research, advisory and risk articles.`,
+        description: `${contentClusters.length} topic pillars connecting ${blogPosts.length} Indian market research, account, advisory and risk articles.`,
         isPartOf: { "@id": `${siteIdentity.url}/#website` },
         publisher: { "@id": `${siteIdentity.url}/#organization` },
         mainEntity: {
@@ -57,9 +57,9 @@ export default function ResearchLibraryPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <PageIntro
         eyebrow="TRADE FIRM RESEARCH LIBRARY"
-        title="Eight research pillars."
+        title={`${contentClusters.length} research pillars.`}
         accent="One connected decision system."
-        text={`Explore ${blogPosts.length} dated notes and expert guides organised around advisory due diligence, Indian indices, derivatives, equities, IPOs, price action and measurable risk.`}
+        text={`Explore ${blogPosts.length} dated notes and expert guides organised around advisory due diligence, Indian indices, Dhan accounts, Forex, derivatives, equities, IPOs, price action and measurable risk.`}
         primaryLabel="Browse all insights"
         primaryHref="/blogs"
       >
