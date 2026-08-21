@@ -6,9 +6,22 @@ import { blogPosts } from "../../lib/site-content";
 import { siteIdentity } from "../../lib/site-identity";
 
 export const metadata = {
-  title: "Stock Market Research & Advisory Insights India",
-  description: "Read dated TRADE FIRM market notes and expert guides across Indian stock market advisory, NIFTY, BANK NIFTY, derivatives, IPOs and risk management.",
+  title: "Trading Research, Dhan & Forex Guides India",
+  description: "Read TRADE FIRM guides across Indian stock market research, Dhan Demat accounts, Forex and MT5 verification, NIFTY, derivatives, IPOs and risk.",
+  keywords: ["stock market research India", "Dhan Demat account guide", "forex broker India", "MT5 account India", "trading risk management"],
   alternates: { canonical: "https://www.tradefirm.in/blogs" },
+  openGraph: {
+    title: "Trading Research, Dhan & Forex Guides India | TRADE FIRM",
+    description: "Connected guides for Indian market research, account access, broker verification and measurable trading risk.",
+    url: "https://www.tradefirm.in/blogs",
+    images: ["/og-image.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Trading Research, Dhan & Forex Guides India",
+    description: "Connected TRADE FIRM guides for market research, account access and trading risk.",
+    images: ["/og-image.jpg"],
+  },
 };
 
 export default function BlogsPage() {
@@ -21,8 +34,8 @@ export default function BlogsPage() {
         "@type": "CollectionPage",
         "@id": `${url}#collection`,
         url,
-        name: "TRADE FIRM Stock Market Research and Advisory Guides",
-        description: `A ${blogPosts.length}-article Indian stock market research, advisory and risk-management library.`,
+        name: "TRADE FIRM Trading Research and Account Guides",
+        description: `A ${blogPosts.length}-article Indian market research, broker-account, Forex, advisory and risk-management library.`,
         isPartOf: { "@id": `${siteIdentity.url}/#website` },
         mainEntity: {
           "@type": "ItemList",
@@ -52,7 +65,7 @@ export default function BlogsPage() {
         eyebrow="TRADE FIRM INSIGHTS"
         title="Advisory insight for"
         accent="informed market decisions."
-        text="Dated market notes and detailed guides on advisory services, market structure, NIFTY and BANK NIFTY, derivatives, IPO evaluation and disciplined risk management."
+        text="Dated market notes and detailed guides on advisory services, Dhan Demat accounts, Forex and MT5 verification, market structure, derivatives, IPO evaluation and disciplined risk management."
         primaryLabel="Read featured note"
         primaryHref={`/blogs/${featured.slug}`}
       >
@@ -60,12 +73,12 @@ export default function BlogsPage() {
           <span><BookOpen size={23} /></span>
           <small>ADVISORY &amp; RESEARCH LIBRARY</small>
           <h3>{blogPosts.length} professional insights</h3>
-          <p>Advisory • Research • Options • Futures • IPOs • Risk</p>
+          <p>Advisory • Dhan • Forex • MT5 • Derivatives • Risk</p>
         </div>
       </PageIntro>
 
       <section className="section shell research-cluster-strip">
-        <div className="section-head split-head"><div><span>8 RESEARCH PILLARS</span><h2>Browse by decision, product or risk question.</h2></div><p>Topic hubs connect every guide with relevant service pages and free calculators.</p></div>
+        <div className="section-head split-head"><div><span>{contentClusters.length} RESEARCH PILLARS</span><h2>Browse by decision, product or risk question.</h2></div><p>Topic hubs connect every guide with relevant service pages and free calculators.</p></div>
         <div className="cluster-chip-grid">
           {contentClusters.map((cluster) => (
             <Link href={`/research-library/${cluster.slug}`} key={cluster.slug}>
