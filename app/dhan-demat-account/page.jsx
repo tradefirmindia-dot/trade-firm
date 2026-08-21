@@ -374,7 +374,22 @@ export default function DhanDematAccountPage() {
         </div>
       </section>
 
-      <section className={[styles.section, styles.processSection].join(" ")} id="dhan-process">
+      <section className={[styles.section, styles.guideSection].join(" ")} id="dhan-guides">
+        <div className={styles.fxShell}>
+          <div className={styles.sectionHead}>
+            <div><span>DHAN ACCOUNT RESOURCE HUB</span><h2>Detailed guides for every account-opening decision.</h2></div>
+            <p>Use the step-by-step resources to prepare documents, understand charges, verify referral attribution and complete onboarding safely.</p>
+          </div>
+          <div className={styles.guideGrid}>
+            <article><SearchCheck size={22} /><h3>Open a Dhan account online</h3><p>Follow registration, verification, KYC, e-sign, approval and first-login checks in the correct order.</p><a className={styles.cardLink} href="/blogs/how-to-open-dhan-demat-account-online">Read account-opening guide <ArrowRight size={15} /></a></article>
+            <article><WalletCards size={22} /><h3>Documents &amp; KYC checklist</h3><p>Prepare identity, address, bank, signature and segment-related records before starting the form.</p><a className={styles.cardLink} href="/blogs/dhan-account-opening-documents-kyc-guide">Read KYC guide <ArrowRight size={15} /></a></article>
+            <article><Banknote size={22} /><h3>Brokerage &amp; charges</h3><p>Separate account costs, brokerage, statutory levies, DP charges and financing before comparing tariffs.</p><a className={styles.cardLink} href="/blogs/dhan-brokerage-charges-account-opening-guide">Understand Dhan charges <ArrowRight size={15} /></a></article>
+            <article><ShieldCheck size={22} /><h3>Referral link explained</h3><p>Understand attribution, current terms, account custody and the security boundaries of a referral route.</p><a className={styles.cardLink} href="/blogs/dhan-referral-link-how-it-works">Read referral guide <ArrowRight size={15} /></a></article>
+          </div>
+        </div>
+      </section>
+
+            <section className={[styles.section, styles.processSection].join(" ")} id="dhan-process">
         <div className={styles.fxShell}>
           <div className={styles.processLayout}>
             <div className={styles.processCopy}><span>ACCOUNT OPENING PROCESS</span><h2>From referral link to platform access.</h2><p>Dhan handles registration, KYC, account approval, funds, securities and execution. TRADE FIRM provides the referral route and setup support.</p><ExternalCta>Start Dhan registration</ExternalCta></div>
